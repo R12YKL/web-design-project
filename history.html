@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Computing - CS Guide</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        /* Specific styles for content-heavy lower pages */
+        .content-body {
+            line-height: 1.8;
+            max-width: 900px;
+        }
+        .info-section {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius); /* Uses the curved edges variable */
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .timeline-item {
+            border-left: 3px solid var(--accent-blue);
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        .highlight-box {
+            background: var(--accent-light);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="logo">CS Guide</div>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="#" class="active">History of CS</a></li>
+            <li><a href="#">Hardware</a></li>
+            <li><a href="#">Logic</a></li>
+            <li><a href="#">Intro To Python</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#" class="quiz-btn">Quiz!</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <header class="hero-banner">
+            <h1>History of Computing</h1>
+            <p>From the Abacus to Generative AI: A comprehensive revision guide.</p>
+        </header>
+
+        <div class="content-body">
+            
+            <section class="info-section">
+                <h2>Core Ideas & Definitions</h2>
+                <p><strong>The Dijkstra Principle:</strong> Computers manipulate symbols to produce results.</p>
+                <div class="highlight-box">
+                    <strong>General-Purpose Computer:</strong> Designed for a wide range of tasks like word processing or simulations rather than a single purpose.
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>🇮🇪 Ireland’s Role in Computing</h2>
+                <ul>
+                    <li><strong>Percy Ludgate:</strong> The Irish inventor who designed a mechanical analytical engine in 1909.</li>
+                    <li><strong>Kathleen McNulty:</strong> One of the six original ENIAC programmers; UCD students may recognize her name from the "Kay" supercomputer.</li>
+                </ul>
+            </section>
+
+            
+            <section class="info-section">
+                <h2>Key Milestones</h2>
+                <div class="timeline-item">
+                    <strong>1945:</strong> Von Neumann architecture described—the basis for almost all modern computers.
+                </div>
+                <div class="timeline-item">
+                    <strong>1947:</strong> Transistor invented at Bell Labs, replacing bulky vacuum tubes.
+                </div>
+                <div class="timeline-item">
+                    <strong>1989:</strong> Tim Berners-Lee proposes the World Wide Web.
+                </div>
+            </section>
+
+        </div>
+    </main>
+</body>
+</html>
