@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hardware · history of computing (plain, easy to study)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        header {
+            background: #f9f9f9;
+            color: #1a1a1a;
+            padding: 2rem 2rem 1.5rem 2rem;
+            border-bottom: 1px solid #cccccc;
+        }
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        header h1 span {
+            font-weight: 300;
+            color: #555555;
+        }
+        header p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            color: #333333;
+        }
+        .intro-line {
+            background: #fafafa;
+            padding: 1rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 0.95rem;
+            color: #444444;
+        }
+        .intro-line i {
+            font-style: normal;
+            background: #f0f0f0;
+            padding: 0.2rem 1rem;
+            border-radius: 0;
+            display: inline-block;
+        }
+        .content {
+            padding: 2rem 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            border-left: 4px solid #888888;
+            padding-left: 1rem;
+            margin: 2.5rem 0 1.5rem 0;
+            color: #111111;
+        }
+        h2:first-of-type {
+            margin-top: 0.2rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.8rem 0;
+            color: #222222;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 0.2rem;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 1.8rem 0;
+        }
+        .plain-card {
+            background: #fafafa;
+            border-radius: 0;
+            padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+            border: 1px solid #dddddd;
+            transition: none;
+        }
+        .plain-card h4 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.7rem;
+            color: #111111;
+        }
+        .plain-card p {
+            margin-bottom: 0.4rem;
+            color: #222222;
+        }
+        .plain-card a {
+            color: #0033cc;
+            text-decoration: underline;
+        }
+        .list-block {
+            background: #fafafa;
+            padding: 1.5rem 2rem;
+            border-radius: 0;
+            list-style: none;
+            margin: 1.8rem 0;
+            border: 1px solid #eeeeee;
+        }
+        .list-block li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            background: none;
+            list-style-type: square;
+            margin-left: 1.2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0 1.2rem;
+            background: #ffffff;
+            border-radius: 0;
+            border: 1px solid #cccccc;
+        }
+        th {
+            background: #f2f2f2;
+            color: #111111;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-size: 0.85rem;
+            padding: 0.8rem 0.5rem;
+            border-bottom: 1px solid #aaaaaa;
+        }
+        td {
+            padding: 0.8rem 0.5rem;
+            border-bottom: 1px solid #dddddd;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .badge {
+            background: #f0f0f0;
+            padding: 0.1rem 0.5rem;
+            border-radius: 0;
+            font-size: 0.8rem;
+            border: 1px solid #cccccc;
+            color: #333333;
+            white-space: nowrap;
+        }
+        .footnote {
+            background: #f8f8f8;
+            margin-top: 2.5rem;
+            padding: 1.2rem 2rem;
+            font-size: 0.9rem;
+            color: #222222;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            border-top: 1px solid #cccccc;
+            border-bottom: 1px solid #cccccc;
+        }
+        .footnote a {
+            color: #0033cc;
+            text-decoration: underline;
+        }
+        footer {
+            background: #f5f5f5;
+            color: #333333;
+            padding: 1.2rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #cccccc;
+        }
+        footer a {
+            color: #0033cc;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #dddddd;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>HARDWARE <span>· from clay to silicon</span></h1>
+        <p>Mechanical roots, electronic leaps — the tangible history of computing</p>
+    </header>
+
+    <div class="content">
+        <h2>core ideas and definitions</h2>
+        <div class="plain-card">
+            <ul style="padding-left:1.8rem; margin:0.5rem 0;">
+                <li><strong>Computer:</strong> a device that can be programmed to carry out general-purpose logical or mathematical operations. It accepts input, processes data according to a stored program, and produces output. The key is programmability — the ability to change tasks without altering hardware.</li>
+                <li><strong>Stored-program concept (von Neumann architecture):</strong> both instructions and data reside in the same memory space. This allows programs to be modified easily, loaded from storage, and treated as data (e.g., compilers, self-modifying code). Almost all modern computers follow this model.</li>
+                <li><strong>Digital vs. analog:</strong> digital computers use discrete signals (binary 0/1) for precision and noise immunity; analog computers use continuous physical quantities (voltage, rotation) and are suited for simulations but lack accuracy.</li>
+                <li><strong>Electronic vs. mechanical:</strong> electronic computers use electricity and solid-state components for speed; mechanical computers (Babbage, differential analysers) use gears and levers but are slow and bulky.</li>
+                <li><strong>Semiconductor and transistor:</strong> semiconductors (silicon, germanium) have conductivity between conductors and insulators. By doping them, we create transistors — tiny electrically controlled switches. Transistors amplify or cut off current, forming logic gates, memory cells, and processors. They are the foundation of all modern chips.</li>
+                <li><strong>Integrated circuit (IC):</strong> multiple transistors, resistors, and capacitors fabricated on a single silicon die. ICs drastically reduced size, cost, and power while increasing reliability and speed.</li>
+                <li><strong>Microprocessor:</strong> a complete central processing unit (CPU) on a single chip. The Intel 4004 (1971) was the first, enabling personal computers and embedded systems.</li>
+            </ul>
+        </div>
+
+        <h2>pre-electronic aids</h2>
+        <ul class="list-block">
+            <li><strong>Abacus (c. 2500 BCE):</strong> manual arithmetic aid.</li>
+            <li><strong>Pascaline (1642):</strong> Blaise Pascal – mechanical adder/subtracter.</li>
+            <li><strong>Jacquard loom (1801):</strong> punched cards control patterns – inspired Babbage.</li>
+            <li><strong>Difference Engine (1822, Babbage):</strong> automatic polynomial tables.</li>
+            <li><strong>Analytical Engine (1837, Babbage):</strong> first general-purpose mechanical computer design (store + mill).</li>
+            <li><strong>Ada Lovelace:</strong> first algorithm, understood symbolic power.</li>
+            <li><strong>Slide rule (1600s–1970s):</strong> analog, used by engineers.</li>
+        </ul>
+
+        <h2>theoretical foundations</h2>
+        <div class="plain-card">
+            <p><strong>Turing machine (1936, Alan Turing):</strong> a mathematical model consisting of an infinite tape, a read/write head, and a finite set of states. It can simulate any algorithm, defining the limits of computability. The universal Turing machine can imitate any other Turing machine — the theoretical basis for general-purpose computers.</p>
+            <p><strong>Church-Turing thesis:</strong> any function computable by an effective method (human following an algorithm) is computable by a Turing machine. This links formal logic to real computation.</p>
+            <p><strong>Von Neumann architecture (1945):</strong> described by John von Neumann and others. Key features: stored program, sequential instruction execution, arithmetic logic unit, control unit, memory, and input/output. This remains the dominant design for general-purpose computers.</p>
+            <p><strong>Boolean algebra and logic gates:</strong> George Boole (1854) developed algebra of true/false values. Claude Shannon (1937) showed how relays and switches could implement Boolean logic — the foundation of digital circuit design.</p>
+        </div>
+
+        <h2>electronic generations</h2>
+        <table>
+            <thead><tr><th>era</th><th>key tech</th><th>example machine</th></tr></thead>
+            <tbody>
+                <tr><td>1940s–50s</td><td>vacuum tubes</td><td>ENIAC (30 tons, 17k tubes)</td></tr>
+                <tr><td>late 1950s–60s</td><td>transistor</td><td>IBM 1401 (smaller, reliable)</td></tr>
+                <tr><td>1960s–70s</td><td>integrated circuit</td><td>Apollo guidance computer</td></tr>
+                <tr><td>1970s–90s</td><td>microprocessor</td><td>Intel 4004, 6502 (Apple II)</td></tr>
+                <tr><td>today / future</td><td>quantum, neuromorphic</td><td>Google Sycamore, IBM Q</td></tr>
+            </tbody>
+        </table>
+
+        <h2>timeline snapshot (hardware milestones)</h2>
+        <table>
+            <thead><tr><th>year</th><th>hardware / chip</th><th>significance</th></tr></thead>
+            <tbody>
+                <tr><td>1946</td><td>ENIAC</td><td>first general-purpose electronic digital computer</td></tr>
+                <tr><td>1947</td><td>transistor (Bell Labs)</td><td>replaced vacuum tubes</td></tr>
+                <tr><td>1958</td><td>integrated circuit</td><td>Kilby / Noyce – multiple transistors on one chip</td></tr>
+                <tr><td>1971</td><td>Intel 4004</td><td>first single-chip microprocessor</td></tr>
+                <tr><td>1976</td><td>MOS 6502</td><td>cheap CPU for Apple II, Commodore, Atari</td></tr>
+                <tr><td>1981</td><td>IBM PC (8088)</td><td>opened PC market</td></tr>
+                <tr><td>2007</td><td>iPhone</td><td>smartphone era, powerful pocket hardware</td></tr>
+            </tbody>
+        </table>
+
+
+        <h2>software and internet context</h2>
+        <ul class="list-block">
+            <li><strong>Early programming:</strong> plugboards, machine code.</li>
+            <li><strong>Assemblers and compilers:</strong> Grace Hopper (A-0, COBOL) – programs in near-English.</li>
+            <li><strong>Operating systems:</strong> UNIX (1970s), MS-DOS, GUI (Mac, Windows).</li>
+            <li><strong>ARPANET (1969) → TCP/IP (1983):</strong> birth of the Internet.</li>
+            <li><strong>World Wide Web (1989):</strong> Berners-Lee – HTML, HTTP, URLs.</li>
+            <li><strong>Mobile and cloud:</strong> smartphones, AWS, always-on.</li>
+        </ul>
+
+        <h2>ireland in computing history</h2>
+        <div class="plain-card">
+            <p><strong>Percy Ludgate</strong> (1883–1922) – independent mechanical computer design.</p>
+            <p><strong>Kathleen McNulty</strong> – one of six original ENIAC programmers.</p>
+            <p>Today: 14 of world's top 500 supercomputers located in Ireland; major tech hub.</p>
+        </div>
+
+        <h2>security and modern challenges</h2>
+        <div class="plain-card">
+            <p><strong>Early security:</strong> physical locks on machine rooms, simple password protection. No networks meant few remote threats.</p>
+            <p><strong>Malware era (1980s–2000s):</strong> viruses, worms, trojans spread via floppy disks and then internet. Morris worm (1988) showed vulnerability of connected systems.</p>
+            <p><strong>Core defences:</strong> encryption (symmetric like AES, asymmetric like RSA), firewalls, intrusion detection, antivirus, multi-factor authentication, regular patching. Security must be built into software/hardware from the start (security by design), not bolted on later.</p>
+            <p><strong>Modern threat landscape:</strong> ransomware (crippling infrastructure), state-sponsored attacks (supply chain, zero-day exploits), data breaches (personal data theft), IoT vulnerabilities (botnets), and privacy regulations (GDPR, CCPA).</p>
+            <p><strong>Emerging concerns:</strong> quantum computers could break current public-key cryptography; post-quantum cryptography is under development. AI-driven attacks and deepfakes add new layers of risk.</p>
+        </div>
+
+        <h2>big picture summary</h2>
+        <div style="background:#fafafa; padding:1.5rem 2rem; border:1px solid #eeeeee;">
+            <p><strong>Drivers of computing evolution:</strong> theoretical breakthroughs (Turing, von Neumann) provided the conceptual framework. Hardware advanced from vacuum tubes to transistors to integrated circuits to microprocessors (Moore's Law: doubling transistors every ~2 years). Software evolved from machine code to high-level languages, operating systems, and networked applications. Connectivity grew from standalone machines to ARPANET, the internet, and the web, finally leading to mobile and cloud computing.</p>
+            <p><strong>Societal impact:</strong> computing moved from military/research labs to businesses, homes, and pockets. It transformed communication, commerce, science, and entertainment. Ethical challenges include digital divide, privacy, algorithmic bias, job displacement, and environmental footprint (energy use, e-waste).</p>
+            <p><strong>Future directions:</strong> quantum computing (exponential speedup for certain problems), neuromorphic hardware (mimicking brain structure), edge computing (processing near data sources), and responsible AI development. The long-term trend is more integration, specialisation, and pervasiveness — computing everywhere.</p>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
