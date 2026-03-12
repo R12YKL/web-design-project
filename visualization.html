@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact of Technologies - CS Guide</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    }
+
+    .content-area {
+      margin-left: 250px;
+      flex: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .impact-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      padding: 34px;
+      background: linear-gradient(180deg, rgba(10, 15, 30, 0.92), rgba(13, 20, 42, 0.84));
+      border-bottom: 1px solid rgba(0, 212, 255, 0.18);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+    }
+
+    .impact-copy {
+      max-width: 760px;
+    }
+
+    .impact-chip,
+    .panel-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 212, 255, 0.32);
+      background: rgba(5, 8, 16, 0.45);
+      color: var(--accent-cyan);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .impact-chip::before,
+    .panel-kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      box-shadow: 0 0 14px rgba(255, 107, 53, 0.85);
+    }
+
+    .impact-title {
+      margin: 18px 0 12px;
+      font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .impact-copy p {
+      margin: 0;
+      max-width: 68ch;
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .controls {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .control-label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-orange);
+      font-weight: 700;
+    }
+
+    .control-select {
+      min-width: 220px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      background: rgba(8, 13, 28, 0.9);
+      color: #ffffff;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .control-select:hover,
+    .control-select:focus {
+      outline: none;
+      border-color: rgba(255, 107, 53, 0.7);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+      transform: translateY(-1px);
+    }
+
+    .control-select option {
+      background: #0b1126;
+      color: #ffffff;
+    }
+
+    .impact-main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) 360px;
+      gap: 24px;
+      padding: 24px;
+      overflow: auto;
+    }
+
+    .impact-board {
+      display: grid;
+      gap: 24px;
+      min-width: 0;
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .metric-card,
+    .chart-panel,
+    .story-panel,
+    .insight-panel {
+      background: linear-gradient(180deg, rgba(18, 25, 52, 0.96), rgba(11, 17, 38, 0.96));
+      border: 1px solid rgba(0, 212, 255, 0.12);
+      border-radius: 24px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+    }
+
+    .metric-card {
+      padding: 18px 18px 20px;
+    }
+
+    .metric-label,
+    .fact-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent-orange);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    .metric-value,
+    .fact-card strong {
+      display: block;
+      color: #ffffff;
+      font-size: 1.38rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .metric-note,
+    .fact-card p,
+    .story-main p,
+    .insight-description,
+    .use-case-block li {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .chart-panel {
+      padding: 26px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .panel-head h2,
+    .insight-title,
+    .story-main h3,
+    .use-case-block h3 {
+      margin: 10px 0 0;
+      color: #ffffff;
+    }
+
+    .panel-head p {
+      max-width: 34ch;
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .bar-chart {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: end;
+      min-height: 320px;
+    }
+
+    .bar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .bar-value {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .bar-track {
+      width: 100%;
+      max-width: 92px;
+      height: 240px;
+      padding: 8px;
+      display: flex;
+      align-items: flex-end;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(224, 232, 255, 0.08);
+    }
+
+    .bar-fill {
+      width: 100%;
+      height: 12%;
+      border-radius: 16px;
+      transition: height 0.45s ease, background 0.45s ease, box-shadow 0.45s ease;
+    }
+
+    .bar-label {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .story-panel {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 24px 26px;
+    }
+
+    .story-main {
+      max-width: 62ch;
+    }
+
+    .story-year {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent-orange);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .story-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-content: flex-start;
+    }
+
+    .story-tags span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(8, 13, 28, 0.72);
+      border: 1px solid rgba(0, 212, 255, 0.14);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .insight-panel {
+      padding: 26px;
+      align-self: start;
+      position: sticky;
+      top: 24px;
+    }
+
+    .insight-description {
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+
+    .facts-grid {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .fact-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(8, 13, 28, 0.72);
+      border: 1px solid rgba(224, 232, 255, 0.08);
+    }
+
+    .use-case-block {
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(167, 139, 250, 0.12));
+      border: 1px solid rgba(0, 212, 255, 0.12);
+    }
+
+    .use-case-block h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+    }
+
+    .use-case-block ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .use-case-block li + li {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 1150px) {
+      .impact-main {
+        grid-template-columns: 1fr;
+      }
+
+      .insight-panel {
+        position: static;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .impact-header {
+        align-items: flex-start;
+      }
+
+      .metric-strip,
+      .bar-chart {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-area {
+        margin-left: 0;
+      }
+
+      .impact-header,
+      .impact-main {
+        padding: 18px;
+      }
+
+      .controls {
+        width: 100%;
+        justify-content: stretch;
+      }
+
+      .control-group,
+      .control-select {
+        width: 100%;
+      }
+
+      .metric-strip,
+      .bar-chart {
+        grid-template-columns: 1fr;
+      }
+
+      .bar-track {
+        max-width: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="logo">CS Guide</div>
+    <ul>
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="history.html">History of CS</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="Python.html">Python</a></li>
+      <li><a href="logic.html">Logic</a></li>
+      <li><a href="visualization.html" class="active">Tech Impact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content-area">
+    <header class="impact-header">
+      <div class="impact-copy">
+        <span class="impact-chip">Impact of Technologies</span>
+        <h1 class="impact-title">Impact of Technologies</h1>
+        <p>Compare major computing technologies using clear stats and a sensible lens for society, industry, or student relevance.</p>
+      </div>
+      <div class="controls">
+        <div class="control-group">
+          <label class="control-label" for="technologySelect">Technology</label>
+          <select class="control-select" id="technologySelect">
+            <option value="ai">Artificial Intelligence</option>
+            <option value="internet">Internet</option>
+            <option value="cloud">Cloud Computing</option>
+            <option value="mobile">Mobile Computing</option>
+            <option value="security">Cybersecurity</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="lensSelect">Lens</label>
+          <select class="control-select" id="lensSelect">
+            <option value="society">Society</option>
+            <option value="industry">Industry</option>
+            <option value="student">Student Relevance</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="impact-main">
+      <section class="impact-board">
+        <div class="metric-strip">
+          <article class="metric-card">
+            <span class="metric-label">Impact Index</span>
+            <strong class="metric-value" id="impactIndex">0/100</strong>
+            <p class="metric-note" id="impactIndexNote">Average score for the selected lens.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Scale Today</span>
+            <strong class="metric-value" id="scaleToday">Mainstream</strong>
+            <p class="metric-note" id="scaleTodayNote">How widely the technology is used right now.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Current Stage</span>
+            <strong class="metric-value" id="currentStage">Maturing</strong>
+            <p class="metric-note" id="currentStageNote">Its present position in the technology cycle.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Strongest Factor</span>
+            <strong class="metric-value" id="strongestFactor">Reach</strong>
+            <p class="metric-note" id="strongestFactorNote">Top-scoring category in the selected lens.</p>
+          </article>
+        </div>
+
+        <article class="chart-panel">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker" id="lensName">Society Lens</span>
+              <h2>Impact Profile</h2>
+            </div>
+            <p id="chartSummary">Each bar shows a score out of 100 so the comparison actually reflects a real category.</p>
+          </div>
+
+          <div class="bar-chart">
+            <div class="bar-item">
+              <div class="bar-value" id="barValue0">0</div>
+              <div class="bar-track"><div class="bar-fill" id="barFill0"></div></div>
+              <div class="bar-label" id="barLabel0">Reach</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-value" id="barValue1">0</div>
+              <div class="bar-track"><div class="bar-fill" id="barFill1"></div></div>
+              <div class="bar-label" id="barLabel1">Daily Life</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-value" id="barValue2">0</div>
+              <div class="bar-track"><div class="bar-fill" id="barFill2"></div></div>
+              <div class="bar-label" id="barLabel2">Communication</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-value" id="barValue3">0</div>
+              <div class="bar-track"><div class="bar-fill" id="barFill3"></div></div>
+              <div class="bar-label" id="barLabel3">Accessibility</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-panel">
+          <div class="story-main">
+            <span class="story-year" id="milestoneYear">1983</span>
+            <h3 id="milestoneTitle">Internet protocols became the backbone of modern networking</h3>
+            <p id="milestoneText">Key milestones make it easier to understand why a technology matters, not just that it exists.</p>
+          </div>
+          <div class="story-tags" id="sectorTags"></div>
+        </article>
+      </section>
+
+      <aside class="insight-panel">
+        <span class="panel-kicker" id="sideKicker">Society Lens</span>
+        <h2 class="insight-title" id="panelTitle">Internet</h2>
+        <p class="insight-description" id="panelDescription">A short explanation of what the selected technology changes in the real world.</p>
+
+        <div class="facts-grid">
+          <article class="fact-card">
+            <span class="fact-label">Biggest Change</span>
+            <strong id="biggestChange">Global connection</strong>
+            <p id="biggestChangeNote">The main transformation caused by the technology.</p>
+          </article>
+          <article class="fact-card">
+            <span class="fact-label">Best Known For</span>
+            <strong id="bestKnownFor">Communication</strong>
+            <p id="bestKnownForNote">The most recognisable thing the technology delivers.</p>
+          </article>
+          <article class="fact-card">
+            <span class="fact-label">Main Caution</span>
+            <strong id="mainCaution">Security risk</strong>
+            <p id="mainCautionNote">A realistic downside or challenge to keep in mind.</p>
+          </article>
+        </div>
+
+        <div class="use-case-block">
+          <h3>Real-World Examples</h3>
+          <ul id="examplesList"></ul>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    const technologySelect = document.getElementById('technologySelect');
+    const lensSelect = document.getElementById('lensSelect');
+    const barLabels = [0, 1, 2, 3].map((index) => document.getElementById(`barLabel${index}`));
+    const barValues = [0, 1, 2, 3].map((index) => document.getElementById(`barValue${index}`));
+    const barFills = [0, 1, 2, 3].map((index) => document.getElementById(`barFill${index}`));
+
+    const lenses = {
+      society: {
+        title: 'Society Lens',
+        sideKicker: 'Society Lens',
+        summary: 'Average score across the four society categories.',
+        chartSummary: 'These scores show how strongly the technology changes daily life, communication, accessibility, and overall reach.',
+        categories: ['Reach', 'Daily Life', 'Communication', 'Accessibility']
+      },
+      industry: {
+        title: 'Industry Lens',
+        sideKicker: 'Industry Lens',
+        summary: 'Average score across the four industry categories.',
+        chartSummary: 'These scores show how strongly the technology changes productivity, automation, infrastructure, and new market creation.',
+        categories: ['Productivity', 'Automation', 'Infrastructure', 'New Markets']
+      },
+      student: {
+        title: 'Student Lens',
+        sideKicker: 'Student Lens',
+        summary: 'Average score across the four student categories.',
+        chartSummary: 'These scores show how useful the technology is for computer science study, careers, tooling, and experimentation.',
+        categories: ['Course Value', 'Career Demand', 'Tooling', 'Experimentation']
+      }
+    };
+
+    const technologies = {
+      ai: {
+        name: 'Artificial Intelligence',
+        color: '#00d4ff',
+        altColor: '#a78bfa',
+        shadow: 'rgba(0, 212, 255, 0.38)',
+        scaleValue: 'Mass-market rollout',
+        scaleNote: 'Used in search, writing, coding, analytics, and decision support.',
+        stageValue: 'Rapid growth',
+        stageNote: 'Capabilities and adoption are both still accelerating.',
+        summary: 'AI learns from data to automate judgement-heavy work, detect patterns, and generate text, images, predictions, and code.',
+        biggestChange: {
+          title: 'Pattern-heavy tasks at scale',
+          note: 'AI makes classification, recommendation, and content generation dramatically faster.'
+        },
+        bestKnownFor: {
+          title: 'Prediction and generation',
+          note: 'From coding assistants to image tools, AI can analyse and create.'
+        },
+        mainCaution: {
+          title: 'Bias and unreliable output',
+          note: 'AI still needs human checking, good data, and clear safety rules.'
+        },
+        milestone: {
+          year: '2022',
+          title: 'Generative AI reached mainstream users',
+          text: 'Large language models brought advanced AI tools directly into study, work, and everyday software.'
+        },
+        sectors: ['Education', 'Health', 'Finance', 'Media'],
+        examples: [
+          'Coding assistants suggest functions, tests, and bug fixes.',
+          'Hospitals use AI systems to analyse images and prioritise cases.',
+          'Recommendation engines personalise shopping and streaming feeds.'
+        ],
+        scores: {
+          society: [76, 72, 58, 64],
+          industry: [93, 90, 82, 88],
+          student: [92, 96, 86, 94]
+        }
+      },
+      internet: {
+        name: 'Internet',
+        color: '#ff6b35',
+        altColor: '#ffd166',
+        shadow: 'rgba(255, 107, 53, 0.34)',
+        scaleValue: '5B+ connected',
+        scaleNote: 'The internet underpins communication, commerce, search, cloud, and entertainment.',
+        stageValue: 'Global backbone',
+        stageNote: 'Modern digital life depends on it as core infrastructure.',
+        summary: 'The internet connects devices and people worldwide, making communication, information access, and online services effectively instant.',
+        biggestChange: {
+          title: 'Global connection',
+          note: 'Distance matters less when communication, publishing, and collaboration are online.'
+        },
+        bestKnownFor: {
+          title: 'Information access',
+          note: 'Search, websites, cloud tools, and streaming all rely on the internet.'
+        },
+        mainCaution: {
+          title: 'Security and misinformation',
+          note: 'Open networks need strong protection, regulation, and critical thinking.'
+        },
+        milestone: {
+          year: '1983',
+          title: 'TCP/IP became the standard for networked communication',
+          text: 'The switch to TCP/IP turned separate networks into the modern internet and made global interoperability possible.'
+        },
+        sectors: ['Communication', 'Commerce', 'Education', 'Government'],
+        examples: [
+          'Video calls allow remote teaching and global teamwork.',
+          'Online shops and payments power e-commerce around the clock.',
+          'Cloud software keeps files and apps synced across devices.'
+        ],
+        scores: {
+          society: [98, 95, 99, 84],
+          industry: [91, 82, 97, 90],
+          student: [94, 91, 86, 88]
+        }
+      },
+      cloud: {
+        name: 'Cloud Computing',
+        color: '#a78bfa',
+        altColor: '#00d4ff',
+        shadow: 'rgba(122, 252, 255, 0.32)',
+        scaleValue: 'Enterprise backbone',
+        scaleNote: 'Cloud platforms run storage, hosting, analytics, databases, and deployment.',
+        stageValue: 'Mainstream',
+        stageNote: 'It is now the default platform for modern software teams.',
+        summary: 'Cloud computing gives organisations on-demand servers, storage, and services without owning all the hardware themselves.',
+        biggestChange: {
+          title: 'Instant scalable infrastructure',
+          note: 'Teams can launch services globally without building physical data centres first.'
+        },
+        bestKnownFor: {
+          title: 'Hosting and storage',
+          note: 'Apps, streaming, backups, analytics, and AI workloads all lean on the cloud.'
+        },
+        mainCaution: {
+          title: 'Cost and vendor lock-in',
+          note: 'Bad architecture can produce high bills and too much dependence on one provider.'
+        },
+        milestone: {
+          year: '2006',
+          title: 'Cloud infrastructure became widely rentable on demand',
+          text: 'Services like AWS made computing power elastic, so startups and enterprises could scale much faster.'
+        },
+        sectors: ['Software', 'Banking', 'Media', 'Retail'],
+        examples: [
+          'Streaming services scale globally without every company owning giant server rooms.',
+          'Businesses store backups and databases in managed cloud platforms.',
+          'Developers deploy apps faster using cloud-based infrastructure and tools.'
+        ],
+        scores: {
+          society: [68, 62, 74, 60],
+          industry: [96, 88, 99, 84],
+          student: [74, 82, 90, 76]
+        }
+      },
+      mobile: {
+        name: 'Mobile Computing',
+        color: '#00ff88',
+        altColor: '#00d4ff',
+        shadow: 'rgba(0, 255, 136, 0.34)',
+        scaleValue: 'Billions of devices',
+        scaleNote: 'Phones put computing, sensors, and connectivity into everyday life.',
+        stageValue: 'Everyday essential',
+        stageNote: 'For many people, mobile is their main computer and main internet device.',
+        summary: 'Mobile computing made powerful connected devices portable, personal, and always available in daily life.',
+        biggestChange: {
+          title: 'Computing in your pocket',
+          note: 'People can communicate, learn, navigate, and pay from almost anywhere.'
+        },
+        bestKnownFor: {
+          title: 'Apps and sensors',
+          note: 'GPS, cameras, messaging, payments, and social platforms all rely on mobile hardware.'
+        },
+        mainCaution: {
+          title: 'Distraction and privacy',
+          note: 'Constant notifications and heavy app tracking create real downsides.'
+        },
+        milestone: {
+          year: '2007',
+          title: 'The smartphone era reshaped personal computing',
+          text: 'Modern smartphones combined internet access, touch interfaces, sensors, and apps into one everyday device.'
+        },
+        sectors: ['Communication', 'Transport', 'Commerce', 'Social Media'],
+        examples: [
+          'Navigation apps guide transport and logistics in real time.',
+          'Mobile payments let people shop and bank without cash.',
+          'Phones give many learners their first real access to the internet.'
+        ],
+        scores: {
+          society: [97, 96, 93, 89],
+          industry: [84, 72, 78, 88],
+          student: [90, 83, 80, 86]
+        }
+      },
+      security: {
+        name: 'Cybersecurity',
+        color: '#ff6b35',
+        altColor: '#a78bfa',
+        shadow: 'rgba(255, 107, 53, 0.34)',
+        scaleValue: 'Critical protection layer',
+        scaleNote: 'Security work touches networks, apps, identities, devices, and data.',
+        stageValue: 'Permanent priority',
+        stageNote: 'Every connected system needs security by design.',
+        summary: 'Cybersecurity protects systems, data, and people by combining secure design, monitoring, identity controls, and incident response.',
+        biggestChange: {
+          title: 'Trust in digital systems',
+          note: 'Without security, online banking, cloud services, and connected tools become fragile.'
+        },
+        bestKnownFor: {
+          title: 'Defence and resilience',
+          note: 'Encryption, authentication, monitoring, and patching reduce risk across systems.'
+        },
+        mainCaution: {
+          title: 'Threats evolve constantly',
+          note: 'Attackers adapt quickly, so defence is never a finished job.'
+        },
+        milestone: {
+          year: '1988',
+          title: 'The Morris Worm exposed internet-scale security risk',
+          text: 'One early worm showed how vulnerable connected systems could be and helped launch modern security thinking.'
+        },
+        sectors: ['Finance', 'Healthcare', 'Government', 'Cloud Platforms'],
+        examples: [
+          'Multi-factor authentication protects student and work accounts.',
+          'Security teams stop phishing, ransomware, and data theft.',
+          'Encrypted connections keep banking and messaging private.'
+        ],
+        scores: {
+          society: [82, 70, 68, 76],
+          industry: [94, 86, 92, 78],
+          student: [88, 91, 74, 80]
+        }
+      }
+    };
+
+    function average(scores) {
+      return Math.round(scores.reduce((total, value) => total + value, 0) / scores.length);
+    }
+
+    function updateDashboard() {
+      const technology = technologies[technologySelect.value];
+      const lens = lenses[lensSelect.value];
+      const scores = technology.scores[lensSelect.value];
+      const topScore = Math.max(...scores);
+      const topIndex = scores.indexOf(topScore);
+
+      document.getElementById('impactIndex').textContent = `${average(scores)}/100`;
+      document.getElementById('impactIndexNote').textContent = lens.summary;
+      document.getElementById('scaleToday').textContent = technology.scaleValue;
+      document.getElementById('scaleTodayNote').textContent = technology.scaleNote;
+      document.getElementById('currentStage').textContent = technology.stageValue;
+      document.getElementById('currentStageNote').textContent = technology.stageNote;
+      document.getElementById('strongestFactor').textContent = lens.categories[topIndex];
+      document.getElementById('strongestFactorNote').textContent = `${topScore}/100 in the selected lens.`;
+
+      document.getElementById('lensName').textContent = lens.title;
+      document.getElementById('chartSummary').textContent = lens.chartSummary;
+      document.getElementById('sideKicker').textContent = lens.sideKicker;
+      document.getElementById('panelTitle').textContent = technology.name;
+      document.getElementById('panelDescription').textContent = technology.summary;
+
+      document.getElementById('biggestChange').textContent = technology.biggestChange.title;
+      document.getElementById('biggestChangeNote').textContent = technology.biggestChange.note;
+      document.getElementById('bestKnownFor').textContent = technology.bestKnownFor.title;
+      document.getElementById('bestKnownForNote').textContent = technology.bestKnownFor.note;
+      document.getElementById('mainCaution').textContent = technology.mainCaution.title;
+      document.getElementById('mainCautionNote').textContent = technology.mainCaution.note;
+
+      document.getElementById('milestoneYear').textContent = technology.milestone.year;
+      document.getElementById('milestoneTitle').textContent = technology.milestone.title;
+      document.getElementById('milestoneText').textContent = technology.milestone.text;
+
+      document.getElementById('sectorTags').innerHTML = technology.sectors
+        .map((sector) => `<span>${sector}</span>`)
+        .join('');
+
+      document.getElementById('examplesList').innerHTML = technology.examples
+        .map((example) => `<li>${example}</li>`)
+        .join('');
+
+      scores.forEach((score, index) => {
+        barLabels[index].textContent = lens.categories[index];
+        barValues[index].textContent = `${score}`;
+        barFills[index].style.height = `${Math.max(score, 10)}%`;
+        barFills[index].style.background = `linear-gradient(180deg, ${technology.color} 0%, ${technology.altColor} 100%)`;
+        barFills[index].style.boxShadow = `0 14px 26px ${technology.shadow}`;
+      });
+    }
+
+    technologySelect.addEventListener('change', updateDashboard);
+    lensSelect.addEventListener('change', updateDashboard);
+
+    updateDashboard();
+  </script>
+</body>
+</html>

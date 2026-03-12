@@ -1,135 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logic Gates - Learn Digital Logic</title>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Logic Gates - Learn Digital Logic</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    .content-body {
+      line-height: 1.8;
+      max-width: 1120px;
+      margin: 0 auto 48px;
+      padding: 0 12px;
+    }
+    .logic-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 32px;
+      align-items: center;
+    }
+    .logic-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(0, 212, 255, 0.35);
+      border-radius: 999px;
+      background: rgba(5, 8, 16, 0.45);
+      color: var(--accent-cyan);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .logic-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      box-shadow: 0 0 14px rgba(255, 107, 53, 0.85);
+    }
+    .logic-hero-copy p {
+      max-width: 58ch;
+      margin-bottom: 0;
+    }
+    .logic-visual {
+      position: relative;
+      min-height: 320px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      background: radial-gradient(circle at top, rgba(0, 212, 255, 0.14), rgba(5, 8, 16, 0.94));
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+      isolation: isolate;
+    }
+    .logic-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(0, 212, 255, 0.18), rgba(5, 8, 16, 0.15) 44%, rgba(255, 107, 53, 0.26));
+      z-index: 1;
+    }
+    .logic-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.08) contrast(1.03);
+      transform: scale(1.02);
+    }
+    .logic-visual-caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .logic-visual-caption span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(5, 8, 16, 0.72);
+      border: 1px solid rgba(224, 232, 255, 0.16);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+    }
+    .info-section {
+      background: linear-gradient(180deg, rgba(31, 39, 71, 0.96), rgba(18, 25, 52, 0.94));
+      padding: 32px;
+      border-radius: 22px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(0, 212, 255, 0.14);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+    }
+    .info-section h2 {
+      color: #ffffff;
+      border-bottom: 2px solid rgba(0, 212, 255, 0.28);
+      padding-bottom: 12px;
+      margin-top: 0;
+    }
+    .info-section h3 {
+      color: var(--accent-cyan);
+      margin-top: 28px;
+    }
+    .info-section p,
+    .info-section li {
+      color: var(--text-secondary);
+      font-size: 1.03rem;
+    }
+    .info-section strong {
+      color: #ffffff;
+    }
+    .info-section ul {
+      line-height: 1.9;
+      padding-left: 22px;
+    }
+    .info-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: rgba(8, 13, 28, 0.72);
+      border: 1px solid rgba(0, 212, 255, 0.14);
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .info-section table th,
+    .info-section table td {
+      border: 1px solid rgba(224, 232, 255, 0.08);
+      padding: 12px;
+      text-align: center;
+    }
+    .info-section table td {
+      color: #f5f8ff;
+    }
+    .info-section table th {
+      background: rgba(0, 212, 255, 0.12);
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .note {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(167, 139, 250, 0.14));
+      padding: 20px 22px;
+      border-radius: 18px;
+      border-left: 4px solid var(--accent-orange);
+      margin: 24px 0;
+      color: #ffffff;
+    }
+    @media (max-width: 900px) {
+      .logic-hero {
+        grid-template-columns: 1fr;
+      }
+      .logic-visual {
+        min-height: 260px;
+      }
+      .content-body {
+        padding: 0;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <nav class="sidebar">
+    <div class="logo">CS Guide</div>
+    <ul>
+      <li><a href="index.html">Homepage</a></li>
+      <li><a href="history.html">History of CS</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="Python.html">Python</a></li>
+      <li><a href="logic.html" class="active">Logic</a></li>
+      <li><a href="visualization.html">Tech Impact</a></li>
+    </ul>
+  </nav>
 
-<h1>Logic Gates</h1>
+  <div class="content">
+    <header class="hero-banner logic-hero">
+      <div class="logic-hero-copy">
+        <span class="logic-chip">Digital Logic</span>
+        <h1>Digital Logic Gates</h1>
+        <p>Explore the simple binary rules that sit underneath processors, circuits, and every modern computer system.</p>
+      </div>
+      <div class="logic-visual">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2h2NjJkdno0ZXQyeWFjamdsaHNvaHU1ZjdoNHdxZHhpNTc0cmhxeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8YBpKSm3uPWG9Ca0F4/giphy.gif" alt="Animated logic and circuitry visual">
+        <div class="logic-visual-caption">
+          <span>Binary states</span>
+          <span>Gate behaviour</span>
+          <span>Hardware foundations</span>
+        </div>
+      </div>
+    </header>
 
-<p>
-Logic gates are the fundamental building blocks of digital electronics.
-Computers use millions or billions of these gates to process information.
-</p>
+    <div class="content-body">
+      <div class="info-section">
+        <h2>Introduction to Logic Gates</h2>
+        <p>Logic gates are the fundamental building blocks of digital electronics. Computers use millions or billions of these gates to process information.</p>
 
-<div class="highlight">
-Binary values:
-<ul>
-<li><strong>0</strong> = false / off</li>
-<li><strong>1</strong> = true / on</li>
-</ul>
-Logic gates take binary inputs and produce a binary output.
-</div>
+        <h3>Binary Values</h3>
+        <ul>
+          <li><strong>0</strong> = false / off</li>
+          <li><strong>1</strong> = true / on</li>
+        </ul>
 
+        <p>Logic gates take binary inputs and produce a binary output.</p>
+      </div>
 
-<h2>AND Gate</h2>
+      <div class="info-section">
+        <h2>AND Gate</h2>
 
-<div class="card">
+        <p>The AND gate outputs <strong>1 only when both inputs are 1</strong>.</p>
 
-<img src="images/and.png" alt="AND Gate Diagram" class="gate-img">
+        <table>
+          <tr><th>A</th><th>B</th><th>Output</th></tr>
+          <tr><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>0</td><td>1</td><td>0</td></tr>
+          <tr><td>1</td><td>0</td><td>0</td></tr>
+          <tr><td>1</td><td>1</td><td>1</td></tr>
+        </table>
+      </div>
 
-<p>The AND gate outputs <strong>1 only when both inputs are 1</strong>.</p>
+      <div class="info-section">
+        <h2>OR Gate</h2>
 
-<table>
-<tr><th>A</th><th>B</th><th>Output</th></tr>
-<tr><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1</td><td>1</td><td>1</td></tr>
-</table>
+        <p>The OR gate outputs <strong>1 if at least one input is 1</strong>.</p>
 
-</div>
+        <table>
+          <tr><th>A</th><th>B</th><th>Output</th></tr>
+          <tr><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>0</td><td>1</td><td>1</td></tr>
+          <tr><td>1</td><td>0</td><td>1</td></tr>
+          <tr><td>1</td><td>1</td><td>1</td></tr>
+        </table>
+      </div>
 
+      <div class="info-section">
+        <h2>NOT Gate</h2>
 
-<h2>OR Gate</h2>
+        <p>The NOT gate reverses the input value.</p>
 
-<div class="card">
+        <table>
+          <tr><th>Input</th><th>Output</th></tr>
+          <tr><td>0</td><td>1</td></tr>
+          <tr><td>1</td><td>0</td></tr>
+        </table>
+      </div>
 
-<img src="images/or.png" alt="OR Gate Diagram" class="gate-img">
+      <div class="info-section">
+        <h2>NAND Gate</h2>
 
-<p>The OR gate outputs <strong>1 if at least one input is 1</strong>.</p>
+        <p>The NAND gate is the opposite of the AND gate.</p>
 
-<table>
-<tr><th>A</th><th>B</th><th>Output</th></tr>
-<tr><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>1</td><td>1</td><td>1</td></tr>
-</table>
+        <table>
+          <tr><th>A</th><th>B</th><th>Output</th></tr>
+          <tr><td>0</td><td>0</td><td>1</td></tr>
+          <tr><td>0</td><td>1</td><td>1</td></tr>
+          <tr><td>1</td><td>0</td><td>1</td></tr>
+          <tr><td>1</td><td>1</td><td>0</td></tr>
+        </table>
+      </div>
 
-</div>
+      <div class="info-section">
+        <h2>NOR Gate</h2>
 
+        <p>The NOR gate is the opposite of the OR gate.</p>
 
-<h2>NOT Gate</h2>
+        <table>
+          <tr><th>A</th><th>B</th><th>Output</th></tr>
+          <tr><td>0</td><td>0</td><td>1</td></tr>
+          <tr><td>0</td><td>1</td><td>0</td></tr>
+          <tr><td>1</td><td>0</td><td>0</td></tr>
+          <tr><td>1</td><td>1</td><td>0</td></tr>
+        </table>
+      </div>
 
-<div class="card">
-
-<img src="images/not.png" alt="NOT Gate Diagram" class="gate-img">
-
-<p>The NOT gate reverses the input value.</p>
-
-<table>
-<tr><th>Input</th><th>Output</th></tr>
-<tr><td>0</td><td>1</td></tr>
-<tr><td>1</td><td>0</td></tr>
-</table>
-
-</div>
-
-
-<h2>NAND Gate</h2>
-
-<div class="card">
-
-<img src="images/nand.png" alt="NAND Gate Diagram" class="gate-img">
-
-<p>The NAND gate is the opposite of the AND gate.</p>
-
-<table>
-<tr><th>A</th><th>B</th><th>Output</th></tr>
-<tr><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>1</td><td>1</td><td>0</td></tr>
-</table>
-
-</div>
-
-
-<h2>NOR Gate</h2>
-
-<div class="card">
-
-<img src="images/nor.png" alt="NOR Gate Diagram" class="gate-img">
-
-<p>The NOR gate is the opposite of the OR gate.</p>
-
-<table>
-<tr><th>A</th><th>B</th><th>Output</th></tr>
-<tr><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1</td><td>1</td><td>0</td></tr>
-</table>
-
-</div>
-
-
-<h2>Why Logic Gates Matter</h2>
-
-<div class="card">
-<ul>
-<li>Processors are built from billions of logic gates</li>
-<li>They perform calculations</li>
-<li>They control digital circuits</li>
-<li>Every computer program eventually becomes logic operations in hardware</li>
-</ul>
-</div>
-
+      <div class="info-section">
+        <h2>Why Logic Gates Matter</h2>
+        <ul>
+          <li>Processors are built from billions of logic gates</li>
+          <li>They perform calculations</li>
+          <li>They control digital circuits</li>
+          <li>Every computer program eventually becomes logic operations in hardware</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -5,20 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UCD CS Beginner's Guide</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        /* Homepage specific styling */
+        .content {
+            background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWprbGs1Y2c0NW04dXBlMDljaDg1OWxpdGFsaHp2ZWczcW5iYmlkMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3q2XB76CaWPggiNW/giphy.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* Dark overlay for text readability */
+        .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top, rgba(7, 12, 28, 0.72) 0%, rgba(6, 10, 22, 0.92) 46%, rgba(4, 8, 18, 0.98) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Ensure content is above overlay */
+        .content > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-banner {
+            max-width: 980px;
+            margin: 28px auto 32px;
+            padding: 56px 48px;
+            background: linear-gradient(160deg, rgba(6, 10, 22, 0.94) 0%, rgba(12, 18, 36, 0.9) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(12px);
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero-banner h1 {
+            font-size: clamp(2.6rem, 5vw, 4.1rem);
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 212, 255, 0.4);
+            color: #ffffff;
+        }
+
+        .hero-banner p {
+            font-size: 1.3em;
+            color: #f4f7ff;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .grid-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1220px;
+            margin: 0 auto 48px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(7, 11, 24, 0.94) 0%, rgba(12, 18, 36, 0.92) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.46);
+            backdrop-filter: blur(10px);
+        }
+
+        .card h2 {
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #f0f5ff;
+        }
+
+        .card-links a {
+            color: #04111f;
+            font-weight: 800;
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                margin: 16px 16px 24px;
+                padding: 40px 24px;
+            }
+
+            .grid-container {
+                margin: 0 16px 32px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <nav class="sidebar">
         <div class="logo">CS Guide</div>
         <ul>
-            <li><a href="#" class="active">Homepage</a></li>
+            <li><a href="index.html" class="active">Homepage</a></li>
             <li><a href="history.html">History of CS</a></li>
-            <li><a href="#">Hardware</a></li>
-            <li><a href="#">Logic</a></li>
+            <li><a href="hardware.html">Hardware</a></li>
+            <li><a href="Python.html">Python</a></li>
+            <li><a href="logic.html">Logic</a></li>
+            <li><a href="visualization.html">Tech Impact</a></li>
         </ul>
-        <div class="sidebar-footer">
-            <a href="#" class="quiz-btn">Take the Quiz!</a>
-        </div>
     </nav>
 
     <main class="content">
@@ -30,26 +122,43 @@
         <section class="grid-container">
             <div class="card">
                 <h2>Intro To Python</h2>
-                <p>Fundamental programming concepts for first-year students[cite: 4, 8].</p>
+                <p>Fundamental programming concepts for first-year students.</p>
                 <div class="card-links">
-                    <a href="#">More Learning</a>
-                    <a href="#">Python Examples</a>
+                    <a href="Python.html">Learn Python</a>
+                    <a href="Python.html">View Content</a>
                 </div>
             </div>
 
             <div class="card">
-                <h2>History & Resources</h2>
-                <p>Explore the history of computing and essential tools for your career[cite: 5, 9].</p>
+                <h2>History of Computing</h2>
+                <p>Explore the evolution of computing from ancient aids to modern machines.</p>
+                <div class="card-links">
+                    <a href="history.html">View History</a>
+                </div>
             </div>
 
             <div class="card">
                 <h2>Hardware</h2>
-                <p>Understanding the physical components of computing systems[cite: 10].</p>
+                <p>Understanding the physical components and architecture of computing systems.</p>
+                <div class="card-links">
+                    <a href="hardware.html">Learn Hardware</a>
+                </div>
             </div>
 
             <div class="card">
-                <h2>Logic</h2>
-                <p>Mastering the mathematical foundations of computer science[cite: 12].</p>
+                <h2>Digital Logic</h2>
+                <p>Understand the logic gates that form the foundation of all digital systems.</p>
+                <div class="card-links">
+                    <a href="logic.html">Learn Logic</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Impact of Technologies</h2>
+                <p>Compare how major technologies change society, industry, and computer science learning.</p>
+                <div class="card-links">
+                    <a href="visualization.html">View Impact</a>
+                </div>
             </div>
         </section>
     </main>
