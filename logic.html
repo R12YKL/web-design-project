@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic - CS Guide</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CS_GUIDE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="hardware.html">Hardware</a></li>
+                <li><a href="Python.html">Python</a></li>
+                <li><a href="logic.html" class="active">Logic</a></li>
+                <li><a href="ethics.html">Ethics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <header class="hero-banner">
+            <div class="container">
+                <span class="meta-label">LOGIC_GATE: AND_OR_NOT</span>
+                <h1>Boolean Logic</h1>
+                <p>Explore the fundamental principles of logic that allow computers to make decisions, process information, and perform complex calculations.</p>
+            </div>
+        </header>
+
+        <section class="content-body">
+            <div class="container">
+                <section class="info-section">
+                    <h2>Introduction to Logic Gates</h2>
+                    <div class="section-content">
+                        <p>Logic gates are the fundamental building blocks of digital electronics. Computers use millions or billions of these gates to process information.</p>
+
+                        <h3>Binary Values</h3>
+                        <ul>
+                            <li><strong>0</strong> = false / off</li>
+                            <li><strong>1</strong> = true / on</li>
+                        </ul>
+
+                        <p>Logic gates take binary inputs and produce a binary output.</p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>AND Gate</h2>
+                    <div class="section-content">
+                        <p>The AND gate outputs <strong>1 only when both inputs are 1</strong>.</p>
+
+                        <table>
+                            <thead>
+                                <tr><th>A</th><th>B</th><th>Output</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>0</td><td>0</td><td>0</td></tr>
+                                <tr><td>0</td><td>1</td><td>0</td></tr>
+                                <tr><td>1</td><td>0</td><td>0</td></tr>
+                                <tr><td>1</td><td>1</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>OR Gate</h2>
+                    <div class="section-content">
+                        <p>The OR gate outputs <strong>1 if at least one input is 1</strong>.</p>
+
+                        <table>
+                            <thead>
+                                <tr><th>A</th><th>B</th><th>Output</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>0</td><td>0</td><td>0</td></tr>
+                                <tr><td>0</td><td>1</td><td>1</td></tr>
+                                <tr><td>1</td><td>0</td><td>1</td></tr>
+                                <tr><td>1</td><td>1</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>NOT Gate</h2>
+                    <div class="section-content">
+                        <p>The NOT gate reverses the input value.</p>
+
+                        <table>
+                            <thead>
+                                <tr><th>Input</th><th>Output</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>0</td><td>1</td></tr>
+                                <tr><td>1</td><td>0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>NAND Gate</h2>
+                    <div class="section-content">
+                        <p>The NAND gate is the opposite of the AND gate.</p>
+
+                        <table>
+                            <thead>
+                                <tr><th>A</th><th>B</th><th>Output</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>0</td><td>0</td><td>1</td></tr>
+                                <tr><td>0</td><td>1</td><td>1</td></tr>
+                                <tr><td>1</td><td>0</td><td>1</td></tr>
+                                <tr><td>1</td><td>1</td><td>0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>NOR Gate</h2>
+                    <div class="section-content">
+                        <p>The NOR gate is the opposite of the OR gate.</p>
+
+                        <table>
+                            <thead>
+                                <tr><th>A</th><th>B</th><th>Output</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>0</td><td>0</td><td>1</td></tr>
+                                <tr><td>0</td><td>1</td><td>0</td></tr>
+                                <tr><td>1</td><td>0</td><td>0</td></tr>
+                                <tr><td>1</td><td>1</td><td>0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>Why Logic Gates Matter</h2>
+                    <div class="section-content">
+                        <ul>
+                            <li>Processors are built from billions of logic gates</li>
+                            <li>They perform calculations</li>
+                            <li>They control digital circuits</li>
+                            <li>Every computer program eventually becomes logic operations in hardware</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

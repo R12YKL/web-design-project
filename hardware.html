@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware - CS Guide</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CS_GUIDE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="hardware.html" class="active">Hardware</a></li>
+                <li><a href="Python.html">Python</a></li>
+                <li><a href="logic.html">Logic</a></li>
+                <li><a href="ethics.html">Ethics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <header class="hero-banner">
+            <div class="container">
+                <span class="meta-label">HARDWARE_SPEC: V2.0</span>
+                <h1>Hardware Architecture</h1>
+                <p>Follow the physical evolution of computing from early mechanical devices to microprocessors, silicon chips, and modern hardware systems.</p>
+            </div>
+        </header>
+
+        <section class="content-body">
+            <div class="container">
+                <section class="info-section">
+                    <h2>Core Ideas and Definitions</h2>
+                    <div class="section-content">
+                        <ul>
+                            <li><strong>Computer:</strong> A device that can be programmed to carry out general-purpose logical or mathematical operations. It accepts input, processes data according to a stored program, and produces output. The key is programmability — the ability to change tasks without altering hardware.</li>
+                            <li><strong>Stored-program concept (Von Neumann architecture):</strong> Both instructions and data reside in the same memory space. This allows programs to be modified easily, loaded from storage, and treated as data (e.g., compilers, self-modifying code). Almost all modern computers follow this model.</li>
+                            <li><strong>Digital vs. analog:</strong> Digital computers use discrete signals (binary 0/1) for precision and noise immunity; analog computers use continuous physical quantities (voltage, rotation) and are suited for simulations but lack accuracy.</li>
+                            <li><strong>Electronic vs. mechanical:</strong> Electronic computers use electricity and solid-state components for speed; mechanical computers (Babbage, differential analysers) use gears and levers but are slow and bulky.</li>
+                            <li><strong>Semiconductor and transistor:</strong> Semiconductors (silicon, germanium) have conductivity between conductors and insulators. By doping them, we create transistors — tiny electrically controlled switches. Transistors amplify or cut off current, forming logic gates, memory cells, and processors. They are the foundation of all modern chips.</li>
+                            <li><strong>Integrated circuit (IC):</strong> Multiple transistors, resistors, and capacitors fabricated on a single silicon die. ICs drastically reduced size, cost, and power while increasing reliability and speed.</li>
+                            <li><strong>Microprocessor:</strong> A complete central processing unit (CPU) on a single chip. The Intel 4004 (1971) was the first, enabling personal computers and embedded systems.</li>
+                        </ul>
+                    </div>
+                </section>
+
+
+            <section class="info-section">
+                <h2>Pre-electronic Aids</h2>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Abacus (c. 2500 BCE):</strong> Manual arithmetic aid.</li>
+                        <li><strong>Pascaline (1642):</strong> Blaise Pascal – mechanical adder/subtracter.</li>
+                        <li><strong>Jacquard loom (1801):</strong> Punched cards control patterns – inspired Babbage.</li>
+                        <li><strong>Difference Engine (1822, Babbage):</strong> Automatic polynomial tables.</li>
+                        <li><strong>Analytical Engine (1837, Babbage):</strong> First general-purpose mechanical computer design (store + mill).</li>
+                        <li><strong>Ada Lovelace:</strong> First algorithm, understood symbolic power.</li>
+                        <li><strong>Slide rule (1600s–1970s):</strong> Analog, used by engineers.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Theoretical Foundations</h2>
+                <div class="section-content">
+                    <p><strong>Turing machine (1936, Alan Turing):</strong> A mathematical model consisting of an infinite tape, a read/write head, and a finite set of states. It can simulate any algorithm, defining the limits of computability. The universal Turing machine can imitate any other Turing machine — the theoretical basis for general-purpose computers.</p>
+                    <p><strong>Church-Turing thesis:</strong> Any function computable by an effective method (human following an algorithm) is computable by a Turing machine. This links formal logic to real computation.</p>
+                    <p><strong>Von Neumann architecture (1945):</strong> Described by John von Neumann and others. Key features: stored program, sequential instruction execution, arithmetic logic unit, control unit, memory, and input/output. This remains the dominant design for general-purpose computers.</p>
+                    <p><strong>Boolean algebra and logic gates:</strong> George Boole (1854) developed algebra of true/false values. Claude Shannon (1937) showed how relays and switches could implement Boolean logic — the foundation of digital circuit design.</p>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Electronic Generations</h2>
+                <div class="section-content">
+                    <table>
+                        <thead>
+                            <tr><th>Era</th><th>Key Technology</th><th>Example Machine</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1940s–50s</td><td>Vacuum Tubes</td><td>ENIAC (30 tons, 17k tubes)</td></tr>
+                            <tr><td>Late 1950s–60s</td><td>Transistor</td><td>IBM 1401 (smaller, reliable)</td></tr>
+                            <tr><td>1960s–70s</td><td>Integrated Circuit</td><td>Apollo Guidance Computer</td></tr>
+                            <tr><td>1970s–90s</td><td>Microprocessor</td><td>Intel 4004, 6502 (Apple II)</td></tr>
+                            <tr><td>Today / Future</td><td>Quantum, Neuromorphic</td><td>Google Sycamore, IBM Q</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Timeline Snapshot (Hardware Milestones)</h2>
+                <div class="section-content">
+                    <table>
+                        <thead>
+                            <tr><th>Year</th><th>Hardware / Chip</th><th>Significance</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1946</td><td>ENIAC</td><td>First general-purpose electronic digital computer</td></tr>
+                            <tr><td>1947</td><td>Transistor (Bell Labs)</td><td>Replaced vacuum tubes</td></tr>
+                            <tr><td>1958</td><td>Integrated Circuit</td><td>Kilby / Noyce – multiple transistors on one chip</td></tr>
+                            <tr><td>1971</td><td>Intel 4004</td><td>First single-chip microprocessor</td></tr>
+                            <tr><td>1976</td><td>MOS 6502</td><td>Cheap CPU for Apple II, Commodore, Atari</td></tr>
+                            <tr><td>1981</td><td>IBM PC (8088)</td><td>Opened PC market</td></tr>
+                            <tr><td>2007</td><td>iPhone</td><td>Smartphone era, powerful pocket hardware</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Software and Internet Context</h2>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Early programming:</strong> Plugboards, machine code.</li>
+                        <li><strong>Assemblers and compilers:</strong> Grace Hopper (A-0, COBOL) – programs in near-English.</li>
+                        <li><strong>Operating systems:</strong> UNIX (1970s), MS-DOS, GUI (Mac, Windows).</li>
+                        <li><strong>ARPANET (1969) → TCP/IP (1983):</strong> Birth of the Internet.</li>
+                        <li><strong>World Wide Web (1989):</strong> Berners-Lee – HTML, HTTP, URLs.</li>
+                        <li><strong>Mobile and cloud:</strong> Smartphones, AWS, always-on.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Ireland in Computing History</h2>
+                <div class="section-content">
+                    <p><strong>Percy Ludgate</strong> (1883–1922) – Independent mechanical computer design.</p>
+                    <p><strong>Kathleen McNulty</strong> – One of six original ENIAC programmers.</p>
+                    <p>Today: 14 of world's top 500 supercomputers located in Ireland; major tech hub.</p>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Security and Modern Challenges</h2>
+                <div class="section-content">
+                    <p><strong>Early security:</strong> Physical locks on machine rooms, simple password protection. No networks meant few remote threats.</p>
+                    <p><strong>Malware era (1980s–2000s):</strong> Viruses, worms, trojans spread via floppy disks and then internet. Morris worm (1988) showed vulnerability of connected systems.</p>
+                    <p><strong>Core defences:</strong> Encryption (symmetric like AES, asymmetric like RSA), firewalls, intrusion detection, antivirus, multi-factor authentication, regular patching. Security must be built into software/hardware from the start (security by design), not bolted on later.</p>
+                    <p><strong>Modern threat landscape:</strong> Ransomware (crippling infrastructure), state-sponsored attacks (supply chain, zero-day exploits), data breaches (personal data theft), IoT vulnerabilities (botnets), and privacy regulations (GDPR, CCPA).</p>
+                    <p><strong>Emerging concerns:</strong> Quantum computers could break current public-key cryptography; post-quantum cryptography is under development. AI-driven attacks and deepfakes add new layers of risk.</p>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
+    </main>
+
+</body>
+
+</html>
