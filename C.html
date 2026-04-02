@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming - CS Guide</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CS_GUIDE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="hardware.html">Hardware</a></li>
+                <li><a href="C.html" class="active">C</a></li>
+                <li><a href="Python.html">Python</a></li>
+                <li><a href="logic.html">Logic</a></li>
+                <li><a href="ethics.html">Ethics</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <header class="hero-banner">
+            <div class="container">
+                <span class="meta-label">LANGUAGE_MODULE: C_ANSI</span>
+                <h1>Intro To C</h1>
+                <p>C is a foundational programming language that helps you understand how computers work, how programs are built, and how low-level control connects to real hardware.</p>
+            </div>
+        </header>
+
+        <section class="content-body">
+            <div class="container">
+                <section class="info-section">
+                    <h2>What Is C?</h2>
+                    <div class="section-content">
+                        <p>
+                            <strong>C</strong> is a programming language you use to tell a computer what to do. It is one of the most popular and influential languages ever made.
+                        </p>
+                        <p>
+                            C is often called a <strong>middle-level language</strong> because it is close to both hardware and humans. Learning C helps you understand how computers really work inside.
+                        </p>
+                        <p>
+                            Many modern languages like <strong>C++</strong>, <strong>Java</strong>, and <strong>Python</strong> borrowed ideas from C.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>History of C</h2>
+                    <div class="section-content">
+                        <p>
+                            C was created in the early 1970s by <strong>Dennis Ritchie</strong> at Bell Labs.
+                        </p>
+                        <p>
+                            It became famous because it was used to build the UNIX operating system and helped make systems programming more portable across different computers.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>How C Works</h2>
+                    <div class="section-content">
+                        <p>
+                            Before writing C code, you need a <strong>compiler</strong> to turn your code into a program. A compiler translates your human-readable C code into machine code.
+                        </p>
+                        <p>
+                            Popular C compilers include <strong>GCC</strong>, <strong>Clang</strong>, and <strong>MSVC</strong>. You can write C code in any text editor like Notepad or VS Code.
+                        </p>
+                        <p>
+                            Every C program starts with a function called <strong>main</strong>. A function is a block of code that performs a specific task, and the main function is where your program begins running.
+                        </p>
+                        <p>
+                            You use curly braces to mark the beginning and end of a function. Most C statements end with a semicolon to show they are finished.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>Headers And Output</h2>
+                    <div class="section-content">
+                        <p>
+                            The <strong>printf</strong> function is used to print text on the screen. To use printf, you need to include the <strong>stdio.h</strong> header file at the top of your program.
+                        </p>
+                        <p>
+                            A header file gives you access to ready-made functions. In C, you include stdio.h by writing <strong>#include &lt;stdio.h&gt;</strong> at the start.
+                        </p>
+                        <pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    printf("Hello, world!\n");
+    return 0;
+}</code></pre>
+                        <p>
+                            Return zero tells the operating system that your program ended correctly.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>Basic Building Blocks</h2>
+                    <div class="section-content">
+                        <p>
+                            Comments are notes you write for yourself and other programmers. A single-line comment starts with two slashes, and a multi-line comment starts with slash-star and ends with star-slash.
+                        </p>
+                        <p>
+                            Variables are containers that store data like numbers or letters. Every variable has a type that tells what kind of data it holds.
+                        </p>
+                        <p>
+                            The <strong>int</strong> type stores whole numbers, <strong>float</strong> stores decimal numbers, <strong>double</strong> stores larger decimal numbers with more precision, and <strong>char</strong> stores a single character.
+                        </p>
+                        <p>
+                            Operators let you perform actions on variables and values. The equals sign is an assignment operator, plus adds numbers, minus subtracts, star multiplies, forward slash divides, and percent gives the remainder after division.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>Input And Decisions</h2>
+                    <div class="section-content">
+                        <p>
+                            The <strong>scanf</strong> function lets the user type input into your program. Scanf works together with format specifiers to read user input.
+                        </p>
+                        <p>
+                            Use percent d to print an integer with printf, percent f to print a float, and percent c to print a char.
+                        </p>
+                        <p>
+                            If statements let your program make decisions. An if statement runs code only when a condition is true, and else runs code when the condition is false.
+                        </p>
+                        <p>
+                            Use double equals to compare two values for equality.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>Link Back To The Guide</h2>
+                    <div class="section-content">
+                        <p>Use the rest of the guide to connect C with the bigger picture of computer science.</p>
+                        <div class="card-links">
+                            <a href="index.html">Home</a>
+                            <a href="history.html">History</a>
+                            <a href="hardware.html">Hardware</a>
+                            <a href="Python.html">Python</a>
+                            <a href="logic.html">Logic</a>
+                            <a href="ethics.html">Ethics</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -233,6 +233,13 @@ body {
   text-transform: uppercase;
 }
 
+.section-title-tight {
+  font-size: 28px;
+  line-height: 0.95;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 .card p {
   color: var(--ink-muted);
   font-size: 16px;
@@ -300,6 +307,23 @@ body {
   line-height: 1.8;
   color: var(--ink);
   margin-bottom: 20px;
+}
+
+.info-section a {
+  color: #7adfff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.2s ease;
+}
+
+.info-section a:visited {
+  color: #9dc7ff;
+}
+
+.info-section a:hover,
+.info-section a:focus-visible {
+  color: #ffffff;
 }
 
 .info-section ul {
