@@ -17,6 +17,10 @@
       "dest": "/hardware.html"
     },
     {
+      "src": "/c",
+      "dest": "/C.html"
+    },
+    {
       "src": "/python",
       "dest": "/Python.html"
     },
@@ -27,6 +31,14 @@
     {
       "src": "/ethics",
       "dest": "/ethics.html"
+    },
+    {
+      "src": "/references",
+      "dest": "/references.html"
+    },
+    {
+      "src": "/project",
+      "dest": "/Project.html"
     }
   ]
 }
