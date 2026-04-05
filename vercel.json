@@ -17,6 +17,14 @@
       "dest": "/hardware.html"
     },
     {
+      "src": "/software",
+      "dest": "/software.html"
+    },
+    {
+      "src": "/appliedmaths",
+      "dest": "/Appliedmaths.html"
+    },
+    {
       "src": "/c",
       "dest": "/C.html"
     },

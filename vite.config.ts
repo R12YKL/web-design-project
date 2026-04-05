@@ -8,6 +8,8 @@ export default defineConfig({
         main: path.resolve(__dirname, 'index.html'),
         history: path.resolve(__dirname, 'history.html'),
         hardware: path.resolve(__dirname, 'hardware.html'),
+        software: path.resolve(__dirname, 'software.html'),
+        appliedmaths: path.resolve(__dirname, 'Appliedmaths.html'),
         c: path.resolve(__dirname, 'C.html'),
         python: path.resolve(__dirname, 'Python.html'),
         logic: path.resolve(__dirname, 'logic.html'),
