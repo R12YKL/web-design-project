@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software - CS Guide</title>
-    <!-- assumes external stylesheet exists with same styling as hardware page -->
+    <title>Hardware - CS Guide</title>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
@@ -14,7 +13,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="history.html">History</a></li>
-                <li><a href="hardware.html">Hardware</a></li>
+                <li><a href="hardware.html" class="active">Hardware</a></li>
                 <li><a href="C.html">C</a></li>
                 <li><a href="Python.html">Python</a></li>
                 <li><a href="logic.html">Logic</a></li>
@@ -28,204 +27,131 @@
     <main class="content">
         <header class="hero-banner">
             <div class="container">
-                <span class="meta-label">SOFTWARE_DEF: V1.0 // INSTRUCTION & LOGIC</span>
-                <h1>Software &amp; Systems</h1>
-                <p>From machine code to artificial intelligence — how instructions, operating systems, and applications transform raw hardware into intelligent tools.</p>
+                <span class="meta-label">HARDWARE_SPEC: V2.0</span>
+                <h1>Hardware Architecture</h1>
+                <p>Follow the physical evolution of computing from early mechanical devices to microprocessors, silicon chips, and modern hardware systems.</p>
             </div>
         </header>
 
         <section class="content-body">
             <div class="container">
-                <!-- Core Ideas and Definitions -->
                 <section class="info-section">
                     <h2>Core Ideas and Definitions</h2>
                     <div class="section-content">
                         <ul>
-                            <li><strong>Software:</strong> A collection of data, instructions, and programs that tell a computer how to perform specific tasks. Unlike hardware, software is intangible — it can be copied, modified, and executed on compatible machines.</li>
-                            <li><strong>Program:</strong> A sequence of instructions written in a programming language that a computer can interpret or compile to execute a task. Algorithms are expressed as programs.</li>
-                            <li><strong>System Software:</strong> Manages hardware resources and provides a platform for application software. Includes operating systems (Windows, Linux, macOS), device drivers, firmware, and utilities.</li>
-                            <li><strong>Application Software:</strong> End-user programs designed for productivity, creativity, or entertainment — word processors, web browsers, games, and mobile apps.</li>
-                            <li><strong>Compiler vs. Interpreter:</strong> A compiler translates entire source code into machine code before execution (C, C++, Rust). An interpreter executes code line-by-line at runtime (Python, JavaScript, Ruby). Hybrid approaches (JIT compilation) combine both.</li>
-                            <li><strong>Firmware:</strong> Low-level software stored in non-volatile memory (ROM, flash) that controls individual hardware components — BIOS/UEFI, microcontroller code, and embedded systems.</li>
-                            <li><strong>Middleware:</strong> Software that connects different applications or services — databases, message queues, API gateways, and web servers (Apache, Nginx).</li>
+                            <li><strong>Computer:</strong> A device that can be programmed to carry out general-purpose logical or mathematical operations. It accepts input, processes data according to a stored program, and produces output. The key is programmability — the ability to change tasks without altering hardware.</li>
+                            <li><strong>Stored-program concept (Von Neumann architecture):</strong> Both instructions and data reside in the same memory space. This allows programs to be modified easily, loaded from storage, and treated as data (e.g., compilers, self-modifying code). Almost all modern computers follow this model.</li>
+                            <li><strong>Digital vs. analog:</strong> Digital computers use discrete signals (binary 0/1) for precision and noise immunity; analog computers use continuous physical quantities (voltage, rotation) and are suited for simulations but lack accuracy.</li>
+                            <li><strong>Electronic vs. mechanical:</strong> Electronic computers use electricity and solid-state components for speed; mechanical computers (Babbage, differential analysers) use gears and levers but are slow and bulky.</li>
+                            <li><strong>Semiconductor and transistor:</strong> Semiconductors (silicon, germanium) have conductivity between conductors and insulators. By doping them, we create transistors — tiny electrically controlled switches. Transistors amplify or cut off current, forming logic gates, memory cells, and processors. They are the foundation of all modern chips.</li>
+                            <li><strong>Integrated circuit (IC):</strong> Multiple transistors, resistors, and capacitors fabricated on a single silicon die. ICs drastically reduced size, cost, and power while increasing reliability and speed.</li>
+                            <li><strong>Microprocessor:</strong> A complete central processing unit (CPU) on a single chip. The Intel 4004 (1971) was the first, enabling personal computers and embedded systems.</li>
                         </ul>
                     </div>
                 </section>
 
-                <!-- Layers of Abstraction: From Silicon to UI -->
-                <section class="info-section">
-                    <h2>Layers of Abstraction: From Silicon to UI</h2>
-                    <div class="section-content">
-                        <p>Software sits atop a hierarchy of abstraction that simplifies complexity:</p>
-                        <ul>
-                            <li><strong>Machine language (binary):</strong> Native instruction set of the CPU — the only language hardware understands directly.</li>
-                            <li><strong>Assembly language:</strong> Human-readable mnemonics (MOV, ADD, JMP) mapped one-to-one to machine instructions. Used for low-level system tasks and performance-critical kernels.</li>
-                            <li><strong>High-level languages:</strong> C, Python, Java, Go — abstract away hardware details, improve productivity and portability.</li>
-                            <li><strong>Operating system kernel:</strong> Manages processes, memory, file systems, and I/O. Provides syscalls as the bridge between user programs and hardware.</li>
-                            <li><strong>Libraries & APIs:</strong> Reusable code components (libc, OpenGL, TensorFlow) that accelerate development.</li>
-                            <li><strong>User interface:</strong> GUI (graphical), CLI (command line), or voice-driven — the visible part of software with which humans interact.</li>
-                        </ul>
-                        <p><strong>Key insight:</strong> Each layer builds on lower layers, enabling programmers to think in terms of logic rather than transistors.</p>
-                    </div>
-                </section>
 
-                <!-- Evolution of Software: From Plugboards to AI -->
-                <section class="info-section">
-                    <h2>Evolution of Software: From Plugboards to AI</h2>
-                    <div class="section-content">
-                        <ul>
-                            <li><strong>Pre-1940s:</strong> No software as we know it — ENIAC programmed by rewiring cables and setting switches. "Software" was the configuration of physical hardware.</li>
-                            <li><strong>1950s – Assembly & Early Compilers:</strong> Grace Hopper developed the first compiler (A-0). Symbolic assembly reduced human error. FORTRAN (1957) enabled scientific computing.</li>
-                            <li><strong>1960s – Operating Systems Emerge:</strong> IBM OS/360, CTSS, and Multics introduced timesharing, file systems, and hierarchical storage. Software engineering coined at NATO conference (1968).</li>
-                            <li><strong>1970s – UNIX & C:</strong> Dennis Ritchie & Ken Thompson built UNIX and C at Bell Labs — portable OS and language shaped modern computing. Berkeley Software Distribution (BSD) spread UNIX ideas.</li>
-                            <li><strong>1980s – Personal Computing & GUI:</strong> MS-DOS, Apple Macintosh System Software, and Windows 1.0 brought software to homes. Spreadsheets (VisiCalc), word processors (WordPerfect).</li>
-                            <li><strong>1990s – Internet & Web:</strong> Browsers (Mosaic, Netscape), server software (Apache, IIS), Java’s "write once, run anywhere". Open source movement (Linux, GNU).</li>
-                            <li><strong>2000s – Mobile & Cloud:</strong> iOS, Android, app stores. Cloud platforms (AWS, Azure), containerization (Docker), and microservices.</li>
-                            <li><strong>2020s – AI & Large Models:</strong> Software that writes software: GitHub Copilot, LLMs, autonomous agents. AI stack (PyTorch, TensorFlow) revolutionizes problem-solving.</li>
-                        </ul>
-                    </div>
-                </section>
+            <section class="info-section">
+                <h2>Pre-electronic Aids</h2>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Abacus (c. 2500 BCE):</strong> Manual arithmetic aid.</li>
+                        <li><strong>Pascaline (1642):</strong> Blaise Pascal – mechanical adder/subtracter.</li>
+                        <li><strong>Jacquard loom (1801):</strong> Punched cards control patterns – inspired Babbage.</li>
+                        <li><strong>Difference Engine (1822, Babbage):</strong> Automatic polynomial tables.</li>
+                        <li><strong>Analytical Engine (1837, Babbage):</strong> First general-purpose mechanical computer design (store + mill).</li>
+                        <li><strong>Ada Lovelace:</strong> First algorithm, understood symbolic power.</li>
+                        <li><strong>Slide rule (1600s–1970s):</strong> Analog, used by engineers.</li>
+                    </ul>
+                </div>
+            </section>
 
-                <!-- Programming Paradigms & Software Engineering -->
-                <section class="info-section">
-                    <h2>Programming Paradigms & Software Engineering</h2>
-                    <div class="section-content">
-                        <p><strong>Major paradigms that shape how we design software:</strong></p>
-                        <ul>
-                            <li><strong>Imperative (procedural):</strong> Code as step-by-step instructions modifying state (C, Pascal, Fortran).</li>
-                            <li><strong>Object-oriented (OOP):</strong> Organizes code into objects bundling data and methods (Java, C++, Python). Encapsulation, inheritance, polymorphism.</li>
-                            <li><strong>Functional programming:</strong> Pure functions, immutability, and declarative style (Haskell, Lisp, Elixir). Emphasizes side-effect-free transformations.</li>
-                            <li><strong>Logic programming:</strong> Based on formal logic rules and facts (Prolog, Datalog). Used for AI and knowledge systems.</li>
-                            <li><strong>Event-driven & reactive:</strong> Asynchronous flows, callbacks, streams — popular in UI frameworks and Node.js.</li>
-                        </ul>
-                        <p><strong>Development methodologies:</strong> Waterfall → Agile → DevOps. Modern practices: version control (Git), CI/CD pipelines, automated testing, code reviews, and container orchestration.</p>
-                    </div>
-                </section>
+            <section class="info-section">
+                <h2>Theoretical Foundations</h2>
+                <div class="section-content">
+                    <p><strong>Turing machine (1936, Alan Turing):</strong> A mathematical model consisting of an infinite tape, a read/write head, and a finite set of states. It can simulate any algorithm, defining the limits of computability. The universal Turing machine can imitate any other Turing machine — the theoretical basis for general-purpose computers.</p>
+                    <p><strong>Church-Turing thesis:</strong> Any function computable by an effective method (human following an algorithm) is computable by a Turing machine. This links formal logic to real computation.</p>
+                    <p><strong>Von Neumann architecture (1945):</strong> Described by John von Neumann and others. Key features: stored program, sequential instruction execution, arithmetic logic unit, control unit, memory, and input/output. This remains the dominant design for general-purpose computers.</p>
+                    <p><strong>Boolean algebra and logic gates:</strong> George Boole (1854) developed algebra of true/false values. Claude Shannon (1937) showed how relays and switches could implement Boolean logic — the foundation of digital circuit design.</p>
+                </div>
+            </section>
 
-                <!-- Software Milestones Timeline (mirroring hardware table style) -->
-                <section class="info-section">
-                    <h2>Timeline Snapshot (Software Milestones)</h2>
-                    <div class="section-content">
-                        <table>
-                            <thead>
-                                <tr><th>Year</th><th>Software / System</th><th>Significance</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>1957</td><td>FORTRAN</td><td>First high-level language; optimized numerical computing</td></tr>
-                                <tr><td>1959</td><td>COBOL</td><td>Business-oriented language, designed by Grace Hopper committee</td></tr>
-                                <tr><td>1969</td><td>UNIX</td><td>Portable, multi-user OS that influenced Linux, macOS, BSD</td></tr>
-                                <tr><td>1972</td><td>C language</td><td>System programming foundation; used in OS kernels, embedded</td></tr>
-                                <tr><td>1985</td><td>Windows 1.0</td><td>Microsoft GUI for PC; beginning of dominant desktop platform</td></tr>
-                                <tr><td>1991</td><td>Linux kernel</td><td>Open-source UNIX-like kernel; powers servers, Android, supercomputers</td></tr>
-                                <tr><td>1995</td><td>Java & JavaScript</td><td>JVM portability + browser scripting; web revolution</td></tr>
-                                <tr><td>2008</td><td>Android & iOS SDKs</td><td>Mobile software ecosystems transform industries</td></tr>
-                                <tr><td>2015</td><td>Docker & Kubernetes</td><td>Containerization and orchestration — cloud-native era</td></tr>
-                                <tr><td>2023+</td><td>Generative AI stacks</td><td>LLMs (GPT, LLaMA) as new runtime platforms</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+            <section class="info-section">
+                <h2>Electronic Generations</h2>
+                <div class="section-content">
+                    <table>
+                        <thead>
+                            <tr><th>Era</th><th>Key Technology</th><th>Example Machine</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1940s–50s</td><td>Vacuum Tubes</td><td>ENIAC (30 tons, 17k tubes)</td></tr>
+                            <tr><td>Late 1950s–60s</td><td>Transistor</td><td>IBM 1401 (smaller, reliable)</td></tr>
+                            <tr><td>1960s–70s</td><td>Integrated Circuit</td><td>Apollo Guidance Computer</td></tr>
+                            <tr><td>1970s–90s</td><td>Microprocessor</td><td>Intel 4004, 6502 (Apple II)</td></tr>
+                            <tr><td>Today / Future</td><td>Quantum, Neuromorphic</td><td>Google Sycamore, IBM Q</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                <!-- Inside Operating Systems -->
-                <section class="info-section">
-                    <h2>Inside Operating Systems: The Software Orchestrator</h2>
-                    <div class="section-content">
-                        <p><strong>Core OS responsibilities:</strong></p>
-                        <ul>
-                            <li><strong>Process management:</strong> Scheduling, creation, termination, inter-process communication (IPC).</li>
-                            <li><strong>Memory management:</strong> Virtual memory, paging, segmentation, allocation and protection.</li>
-                            <li><strong>File systems:</strong> Organize storage into files/directories (FAT, NTFS, ext4, APFS).</li>
-                            <li><strong>Device drivers:</strong> Abstract hardware specifics; provide uniform interface for peripherals.</li>
-                            <li><strong>Security & permissions:</strong> User accounts, access control lists (ACL), sandboxing.</li>
-                        </ul>
-                        <p><strong>Notable OS families:</strong> Windows (NT kernel), Linux (monolithic kernel + modules), macOS/XNU (hybrid), BSD, and real-time OS (FreeRTOS, QNX) for embedded systems.</p>
-                    </div>
-                </section>
+            <section class="info-section">
+                <h2>Timeline Snapshot (Hardware Milestones)</h2>
+                <div class="section-content">
+                    <table>
+                        <thead>
+                            <tr><th>Year</th><th>Hardware / Chip</th><th>Significance</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1946</td><td>ENIAC</td><td>First general-purpose electronic digital computer</td></tr>
+                            <tr><td>1947</td><td>Transistor (Bell Labs)</td><td>Replaced vacuum tubes</td></tr>
+                            <tr><td>1958</td><td>Integrated Circuit</td><td>Kilby / Noyce – multiple transistors on one chip</td></tr>
+                            <tr><td>1971</td><td>Intel 4004</td><td>First single-chip microprocessor</td></tr>
+                            <tr><td>1976</td><td>MOS 6502</td><td>Cheap CPU for Apple II, Commodore, Atari</td></tr>
+                            <tr><td>1981</td><td>IBM PC (8088)</td><td>Opened PC market</td></tr>
+                            <tr><td>2007</td><td>iPhone</td><td>Smartphone era, powerful pocket hardware</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                <!-- Software Security & Reliability -->
-                <section class="info-section">
-                    <h2>Software Security &amp; Reliability</h2>
-                    <div class="section-content">
-                        <p><strong>Security flaws are often software bugs:</strong> Buffer overflows, SQL injection, XSS, race conditions. The infamous Morris Worm (1988) exploited a Unix vulnerability. Modern secure coding practices:</p>
-                        <ul>
-                            <li><strong>Input validation & sanitization</strong> to prevent injection attacks.</li>
-                            <li><strong>Memory-safe languages</strong> (Rust, Go, Python) reduce buffer overflows compared to C/C++.</li>
-                            <li><strong>Cryptography in software:</strong> SSL/TLS libraries (OpenSSL, BoringSSL), end-to-end encryption, and secure key management.</li>
-                            <li><strong>Automated analysis:</strong> Static analysis (SAST), dynamic analysis (fuzzing), and dependency scanning (SBOM).</li>
-                            <li><strong>Software supply chain security:</strong> Code signing, package repositories (npm, PyPI) monitoring, and zero-day mitigation.</li>
-                        </ul>
-                        <p><strong>Reliability & testing:</strong> Unit tests, integration tests, chaos engineering, and formal verification for critical systems (avionics, medical devices).</p>
-                    </div>
-                </section>
+            <section class="info-section">
+                <h2>Software and Internet Context</h2>
+                <div class="section-content">
+                    <ul>
+                        <li><strong>Early programming:</strong> Plugboards, machine code.</li>
+                        <li><strong>Assemblers and compilers:</strong> Grace Hopper (A-0, COBOL) – programs in near-English.</li>
+                        <li><strong>Operating systems:</strong> UNIX (1970s), MS-DOS, GUI (Mac, Windows).</li>
+                        <li><strong>ARPANET (1969) → TCP/IP (1983):</strong> Birth of the Internet.</li>
+                        <li><strong>World Wide Web (1989):</strong> Berners-Lee – HTML, HTTP, URLs.</li>
+                        <li><strong>Mobile and cloud:</strong> Smartphones, AWS, always-on.</li>
+                    </ul>
+                </div>
+            </section>
 
-                <!-- Open Source and Free Software Movement -->
-                <section class="info-section">
-                    <h2>Open Source Revolution &amp; Collaborative Development</h2>
-                    <div class="section-content">
-                        <p>From the GNU Project (1983) by Richard Stallman to Linus Torvalds’ Linux, open source transformed software. Key concepts:</p>
-                        <ul>
-                            <li><strong>Copyleft licenses (GPL):</strong> Derived work must also remain open source.</li>
-                            <li><strong>Permissive licenses (MIT, Apache, BSD):</strong> Allow proprietary reuse with attribution.</li>
-                            <li><strong>Collaboration platforms:</strong> GitHub, GitLab, Bitbucket — pull requests, issues, and global contribution.</li>
-                            <li><strong>Impact:</strong> Linux runs 90% of cloud servers, Android uses Linux kernel, Chromium → Chrome, VS Code, Python, LLVM. Open source is now the backbone of modern software infrastructure.</li>
-                        </ul>
-                    </div>
-                </section>
+            <section class="info-section">
+                <h2>Ireland in Computing History</h2>
+                <div class="section-content">
+                    <p><strong>Percy Ludgate</strong> (1883–1922) – Independent mechanical computer design.</p>
+                    <p><strong>Kathleen McNulty</strong> – One of six original ENIAC programmers.</p>
+                    <p>Today: 14 of world's top 500 supercomputers located in Ireland; major tech hub.</p>
+                </div>
+            </section>
 
-                <!-- Ireland in Software (mirroring Ireland in hardware section) -->
-                <section class="info-section">
-                    <h2>Ireland in Software &amp; Computing Innovation</h2>
-                    <div class="section-content">
-                        <p><strong>European software hub:</strong> Dublin's "Silicon Docks" hosts Google, Facebook, LinkedIn, Stripe, and HubSpot engineering offices. Irish software exports exceed €50 billion annually.</p>
-                        <p><strong>Research & innovation:</strong> Lero (Irish Software Research Centre) focuses on software quality, autonomous systems, and AI. Key contributions to open-source projects and global standards.</p>
-                        <p><strong>Notable figures:</strong> John McCarthy (born in Boston but Irish heritage, coined "Artificial Intelligence"), and modern developers shaping fintech, medtech, and SaaS.</p>
-                        <p>Today, Ireland is the second-largest exporter of computer services in the world, with a vibrant ecosystem of startups and multinational R&D labs.</p>
-                    </div>
-                </section>
-
-                <!-- Modern Challenges & Future of Software -->
-                <section class="info-section">
-                    <h2>Modern Challenges and The Future of Software</h2>
-                    <div class="section-content">
-                        <p><strong>Complexity & technical debt:</strong> Large codebases become fragile. Microservices and modular design help but add operational overhead.</p>
-                        <p><strong>AI-assisted development:</strong> Tools like Copilot, ChatGPT, and CodeWhisperer generate code, but raise quality, copyright, and ethics concerns.</p>
-                        <p><strong>Quantum software stack:</strong> Quantum algorithms (Shor, Grover) require new languages (Q#, Qiskit). Hybrid classical-quantum systems are emerging.</p>
-                        <p><strong>Cyber-resilience:</strong> Supply chain attacks (Log4Shell, SolarWinds) push "zero trust" and automated patching. Software Bills of Materials (SBOMs) become mandatory in regulations.</p>
-                        <p><strong>Sustainability:</strong> Green software engineering — optimizing energy efficiency, carbon-aware computing, and reducing bloat.</p>
-                        <p><strong>Emerging concerns:</strong> AI-generated code may introduce subtle vulnerabilities; ensuring verifiable correctness via formal methods and advanced static analysis is a growing research field. The future points toward self-adaptive systems and low-code/no-code platforms democratizing software creation.</p>
-                    </div>
-                </section>
-
-                <!-- Ethical and Social Dimensions of Software -->
-                <section class="info-section">
-                    <h2>Ethical &amp; Social Dimensions</h2>
-                    <div class="section-content">
-                        <p>Software shapes society — from algorithmic bias in hiring tools to privacy-invasive tracking. Key issues:</p>
-                        <ul>
-                            <li><strong>Algorithmic accountability:</strong> Ensuring fairness, transparency, and auditability in automated decision systems.</li>
-                            <li><strong>Software licensing and digital rights:</strong> Copyleft, open-core, and proprietary models affect innovation and access.</li>
-                            <li><strong>Accessibility:</strong> Building inclusive software that accommodates users with disabilities (WCAG standards).</li>
-                            <li><strong>Environmental impact:</strong> Data centers and software inefficiency contribute to carbon emissions; sustainable software practices are critical.</li>
-                        </ul>
-                        <p>The Association for Computing Machinery (ACM) and IEEE Software Code of Ethics emphasize that software engineers shall act consistently with public interest, maintain integrity, and strive to produce high-quality, reliable software.</p>
-                    </div>
-                </section>
-
-                <!-- Summary / final note -->
-                <section class="info-section">
-                    <h2>Why Software Matters</h2>
-                    <div class="section-content">
-                        <p><em>"Software is a set of instructions to hardware. But more than that — it's the embodiment of human logic, creativity, and problem-solving."</em></p>
-                        <p>Without software, a computer is an expensive paperweight. Together with hardware, software unlocks the digital universe: from tiny embedded systems that run medical implants to sprawling cloud platforms that connect billions of people.</p>
-                        <p><strong>Key takeaway:</strong> Understanding software — from low-level operating systems to high-level paradigms and security — is essential for any computer scientist. It is the invisible engine of the information age, and mastering its principles empowers you to build, break, and reimagine the future.</p>
-                    </div>
-                </section>
-            </div>
-        </section>
+            <section class="info-section">
+                <h2>Security and Modern Challenges</h2>
+                <div class="section-content">
+                    <p><strong>Early security:</strong> Physical locks on machine rooms, simple password protection. No networks meant few remote threats.</p>
+                    <p><strong>Malware era (1980s–2000s):</strong> Viruses, worms, trojans spread via floppy disks and then internet. Morris worm (1988) showed vulnerability of connected systems.</p>
+                    <p><strong>Core defences:</strong> Encryption (symmetric like AES, asymmetric like RSA), firewalls, intrusion detection, antivirus, multi-factor authentication, regular patching. Security must be built into software/hardware from the start (security by design), not bolted on later.</p>
+                    <p><strong>Modern threat landscape:</strong> Ransomware (crippling infrastructure), state-sponsored attacks (supply chain, zero-day exploits), data breaches (personal data theft), IoT vulnerabilities (botnets), and privacy regulations (GDPR, CCPA).</p>
+                    <p><strong>Emerging concerns:</strong> Quantum computers could break current public-key cryptography; post-quantum cryptography is under development. AI-driven attacks and deepfakes add new layers of risk.</p>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
     </main>
-    <!-- footer optional but matches hardware page style (if hardware page had footer, this mirrors structure) -->
-    <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #5b6e8c; border-top: 1px solid #e9eef3; margin-top: 2rem;">
-        <p>CS Guide — Software Architecture & Systems | Open educational resource</p>
-    </footer>
+
 </body>
+
 </html>

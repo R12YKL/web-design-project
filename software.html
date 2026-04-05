@@ -4,205 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software - CS Guide</title>
+    <!-- assumes external stylesheet exists with same styling as hardware page -->
     <link rel="stylesheet" href="stylesheet.css">
-    <style>
-     
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f5f7fc;
-            color: #1e293b;
-            line-height: 1.5;
-        }
-
-        .navbar {
-            background: #0a0f1c;
-            border-bottom: 1px solid #1e2a3e;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.9rem 2rem;
-        }
-
-        .logo {
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: -0.5px;
-            color: #38bdf8;
-            text-decoration: none;
-            background: linear-gradient(135deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.8rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #cbd5e6;
-            font-weight: 500;
-            transition: color 0.2s;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #38bdf8;
-        }
-
-        .content {
-            max-width: 1280px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 0 0 1.5rem 1.5rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-        }
-
-        .hero-banner {
-            background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
-            padding: 3rem 2rem;
-            border-radius: 0 0 2rem 2rem;
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        .hero-banner .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .meta-label {
-            font-family: monospace;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            background: #1e293b;
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            color: #94a3b8;
-            margin-bottom: 1rem;
-        }
-
-        .hero-banner h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #f0f9ff, #a5f3fc);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        .hero-banner p {
-            font-size: 1.2rem;
-            color: #cbd5e1;
-            max-width: 720px;
-        }
-
-        .content-body {
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .info-section {
-            background: #ffffff;
-            border-radius: 1.5rem;
-            margin-bottom: 2.5rem;
-            border: 1px solid #e9eef3;
-            overflow: hidden;
-            transition: box-shadow 0.2s;
-        }
-
-        .info-section h2 {
-            background: #f8fafc;
-            padding: 1.2rem 2rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-            border-bottom: 2px solid #e2e8f0;
-            color: #0f172a;
-        }
-
-        .section-content {
-            padding: 1.5rem 2rem;
-        }
-
-        .section-content ul, .section-content p {
-            margin-bottom: 1rem;
-        }
-
-        .section-content li {
-            margin-left: 1.8rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .section-content strong {
-            color: #0f3b5c;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-
-        th, td {
-            border: 1px solid #e2e8f0;
-            padding: 0.75rem 1rem;
-            text-align: left;
-            vertical-align: top;
-        }
-
-        th {
-            background-color: #f1f5f9;
-            font-weight: 600;
-        }
-
-        @media (max-width: 760px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-            .hero-banner h1 {
-                font-size: 2rem;
-            }
-            .section-content {
-                padding: 1rem;
-            }
-        }
-
-        .badge-soft {
-            background: #eef2ff;
-            color: #1e40af;
-            font-size: 0.8rem;
-            border-radius: 30px;
-            padding: 0.2rem 0.8rem;
-            display: inline-block;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -233,7 +36,7 @@
 
         <section class="content-body">
             <div class="container">
-                <!-- Core Ideas Section -->
+                <!-- Core Ideas and Definitions -->
                 <section class="info-section">
                     <h2>Core Ideas and Definitions</h2>
                     <div class="section-content">
@@ -249,7 +52,7 @@
                     </div>
                 </section>
 
-                <!-- Types & Layers of Software -->
+                <!-- Layers of Abstraction: From Silicon to UI -->
                 <section class="info-section">
                     <h2>Layers of Abstraction: From Silicon to UI</h2>
                     <div class="section-content">
@@ -262,11 +65,11 @@
                             <li><strong>Libraries & APIs:</strong> Reusable code components (libc, OpenGL, TensorFlow) that accelerate development.</li>
                             <li><strong>User interface:</strong> GUI (graphical), CLI (command line), or voice-driven — the visible part of software with which humans interact.</li>
                         </ul>
-                        <p><span class="badge-soft">Key insight</span> Each layer builds on lower layers, enabling programmers to think in terms of logic rather than transistors.</p>
+                        <p><strong>Key insight:</strong> Each layer builds on lower layers, enabling programmers to think in terms of logic rather than transistors.</p>
                     </div>
                 </section>
 
-                <!-- Historical evolution of software -->
+                <!-- Evolution of Software: From Plugboards to AI -->
                 <section class="info-section">
                     <h2>Evolution of Software: From Plugboards to AI</h2>
                     <div class="section-content">
@@ -283,7 +86,7 @@
                     </div>
                 </section>
 
-                <!-- Software Paradigms & Methodologies -->
+                <!-- Programming Paradigms & Software Engineering -->
                 <section class="info-section">
                     <h2>Programming Paradigms & Software Engineering</h2>
                     <div class="section-content">
@@ -299,7 +102,7 @@
                     </div>
                 </section>
 
-                <!-- Major software milestones timeline -->
+                <!-- Software Milestones Timeline (mirroring hardware table style) -->
                 <section class="info-section">
                     <h2>Timeline Snapshot (Software Milestones)</h2>
                     <div class="section-content">
@@ -323,7 +126,7 @@
                     </div>
                 </section>
 
-                <!-- Operating Systems and Kernel Concepts -->
+                <!-- Inside Operating Systems -->
                 <section class="info-section">
                     <h2>Inside Operating Systems: The Software Orchestrator</h2>
                     <div class="section-content">
@@ -339,9 +142,9 @@
                     </div>
                 </section>
 
-                <!-- Software Security & Quality -->
+                <!-- Software Security & Reliability -->
                 <section class="info-section">
-                    <h2>Software Security & Reliability</h2>
+                    <h2>Software Security &amp; Reliability</h2>
                     <div class="section-content">
                         <p><strong>Security flaws are often software bugs:</strong> Buffer overflows, SQL injection, XSS, race conditions. The infamous Morris Worm (1988) exploited a Unix vulnerability. Modern secure coding practices:</p>
                         <ul>
@@ -357,7 +160,7 @@
 
                 <!-- Open Source and Free Software Movement -->
                 <section class="info-section">
-                    <h2>Open Source Revolution & Collaborative Development</h2>
+                    <h2>Open Source Revolution &amp; Collaborative Development</h2>
                     <div class="section-content">
                         <p>From the GNU Project (1983) by Richard Stallman to Linus Torvalds’ Linux, open source transformed software. Key concepts:</p>
                         <ul>
@@ -369,42 +172,58 @@
                     </div>
                 </section>
 
-                <!-- Ireland & Software Contributions -->
+                <!-- Ireland in Software (mirroring Ireland in hardware section) -->
                 <section class="info-section">
-                    <h2>Ireland's Footprint in Software</h2>
+                    <h2>Ireland in Software &amp; Computing Innovation</h2>
                     <div class="section-content">
                         <p><strong>European software hub:</strong> Dublin's "Silicon Docks" hosts Google, Facebook, LinkedIn, Stripe, and HubSpot engineering offices. Irish software exports exceed €50 billion annually.</p>
                         <p><strong>Research & innovation:</strong> Lero (Irish Software Research Centre) focuses on software quality, autonomous systems, and AI. Key contributions to open-source projects and global standards.</p>
                         <p><strong>Notable figures:</strong> John McCarthy (born in Boston but Irish heritage, coined "Artificial Intelligence"), and modern developers shaping fintech, medtech, and SaaS.</p>
+                        <p>Today, Ireland is the second-largest exporter of computer services in the world, with a vibrant ecosystem of startups and multinational R&D labs.</p>
                     </div>
                 </section>
 
-                <!-- Modern Challenges and Future of Software -->
+                <!-- Modern Challenges & Future of Software -->
                 <section class="info-section">
-                    <h2>Modern Challenges & The Future of Software</h2>
+                    <h2>Modern Challenges and The Future of Software</h2>
                     <div class="section-content">
                         <p><strong>Complexity & technical debt:</strong> Large codebases become fragile. Microservices and modular design help but add operational overhead.</p>
                         <p><strong>AI-assisted development:</strong> Tools like Copilot, ChatGPT, and CodeWhisperer generate code, but raise quality, copyright, and ethics concerns.</p>
                         <p><strong>Quantum software stack:</strong> Quantum algorithms (Shor, Grover) require new languages (Q#, Qiskit). Hybrid classical-quantum systems are emerging.</p>
                         <p><strong>Cyber-resilience:</strong> Supply chain attacks (Log4Shell, SolarWinds) push "zero trust" and automated patching. Software Bills of Materials (SBOMs) become mandatory in regulations.</p>
                         <p><strong>Sustainability:</strong> Green software engineering — optimizing energy efficiency, carbon-aware computing, and reducing bloat.</p>
-                        <p><em>The next frontier: software that writes and evolves itself, autonomous agents, and verifiable correctness via formal methods.</em></p>
+                        <p><strong>Emerging concerns:</strong> AI-generated code may introduce subtle vulnerabilities; ensuring verifiable correctness via formal methods and advanced static analysis is a growing research field. The future points toward self-adaptive systems and low-code/no-code platforms democratizing software creation.</p>
                     </div>
                 </section>
 
-                <!-- Summary Quote / fun fact -->
+                <!-- Ethical and Social Dimensions of Software -->
                 <section class="info-section">
-                    <h2>Quote & Essence</h2>
+                    <h2>Ethical &amp; Social Dimensions</h2>
                     <div class="section-content">
-                        <p><em>"Software is a set of instructions to hardware. But more than that — it's the embodiment of human logic, creativity, and problem-solving."</em> — Anonymous engineer.</p>
-                        <p>Without software, a computer is an expensive paperweight. Together with hardware, software unlocks the digital universe: from tiny embedded systems to sprawling cloud platforms that connect billions.</p>
-                        <p>📌 <strong>Key takeaway:</strong> Software is the invisible engine of the information age. Understanding its layers, evolution, and security is essential for any computer scientist.</p>
+                        <p>Software shapes society — from algorithmic bias in hiring tools to privacy-invasive tracking. Key issues:</p>
+                        <ul>
+                            <li><strong>Algorithmic accountability:</strong> Ensuring fairness, transparency, and auditability in automated decision systems.</li>
+                            <li><strong>Software licensing and digital rights:</strong> Copyleft, open-core, and proprietary models affect innovation and access.</li>
+                            <li><strong>Accessibility:</strong> Building inclusive software that accommodates users with disabilities (WCAG standards).</li>
+                            <li><strong>Environmental impact:</strong> Data centers and software inefficiency contribute to carbon emissions; sustainable software practices are critical.</li>
+                        </ul>
+                        <p>The Association for Computing Machinery (ACM) and IEEE Software Code of Ethics emphasize that software engineers shall act consistently with public interest, maintain integrity, and strive to produce high-quality, reliable software.</p>
+                    </div>
+                </section>
+
+                <!-- Summary / final note -->
+                <section class="info-section">
+                    <h2>Why Software Matters</h2>
+                    <div class="section-content">
+                        <p><em>"Software is a set of instructions to hardware. But more than that — it's the embodiment of human logic, creativity, and problem-solving."</em></p>
+                        <p>Without software, a computer is an expensive paperweight. Together with hardware, software unlocks the digital universe: from tiny embedded systems that run medical implants to sprawling cloud platforms that connect billions of people.</p>
+                        <p><strong>Key takeaway:</strong> Understanding software — from low-level operating systems to high-level paradigms and security — is essential for any computer scientist. It is the invisible engine of the information age, and mastering its principles empowers you to build, break, and reimagine the future.</p>
                     </div>
                 </section>
             </div>
         </section>
     </main>
-    <!-- Simple footer to mirror style -->
+    <!-- footer optional but matches hardware page style (if hardware page had footer, this mirrors structure) -->
     <footer style="text-align: center; padding: 2rem; font-size: 0.8rem; color: #5b6e8c; border-top: 1px solid #e9eef3; margin-top: 2rem;">
         <p>CS Guide — Software Architecture & Systems | Open educational resource</p>
     </footer>
