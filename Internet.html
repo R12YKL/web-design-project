@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet - csguideforyou</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">csguideforyou</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="hardware.html">Hardware</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="Appliedmaths.html">Applied Maths</a></li>
+                <li><a href="C.html">C</a></li>
+                <li><a href="Python.html">Python</a></li>
+                <li><a href="logic.html">Logic</a></li>
+                <li><a href="internet.html" class="active">Internet</a></li>
+                <li><a href="ethics.html">Ethics</a></li>
+                <li><a href="Project.html">Project</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <header class="hero-banner">
+            <div class="container">
+                <span class="meta-label">NETWORKING: INTERNET_BASICS</span>
+                <h1>How the Internet Works</h1>
+                <p class="author-credit">Author<span class="author-name">Finn</span></p>
+                <p>Learn what happens behind the scenes when you visit a website, how devices communicate, and how data travels across networks.</p>
+            </div>
+        </header>
+
+        <section class="content-body">
+            <div class="container">
+
+                <section class="info-section">
+                    <h2>What Happens When You Type a URL?</h2>
+                    <div class="section-content">
+                        <p>When you enter a website address (URL) into your browser, several steps happen almost instantly:</p>
+
+                        <h3>1. DNS Lookup</h3>
+                        <p>The browser asks a DNS server to translate the website name into an IP address.</p>
+
+                        <h3>2. Connecting to the Server</h3>
+                        <p>Your computer connects to the server using the IP address.</p>
+
+                        <h3>3. Sending a Request</h3>
+                        <p>The browser sends an HTTP or HTTPS request to the server asking for the webpage.</p>
+
+                        <h3>4. Server Response</h3>
+                        <p>The server sends back the website data (HTML, CSS, images).</p>
+
+                        <h3>5. Displaying the Page</h3>
+                        <p>Your browser processes the data and displays the webpage.</p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>IP Addresses</h2>
+                    <div class="section-content">
+                        <p>An IP address is a unique number that identifies a device on a network.</p>
+
+                        <h3>Example</h3>
+                        <p><strong>192.168.1.1</strong></p>
+
+                        <ul>
+                            <li>Acts like a postal address for computers</li>
+                            <li>Ensures data is sent to the correct device</li>
+                            <li>Every device on the internet has one</li>
+                        </ul>
+
+                        <h3>Types of IP Addresses</h3>
+                        <ul>
+                            <li><strong>IPv4</strong> – shorter format (most common)</li>
+                            <li><strong>IPv6</strong> – longer format for more devices</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>The Layer Model (TCP/IP)</h2>
+                    <div class="section-content">
+                        <p>The internet uses layers to organise how data is sent and received. Each layer has a specific role.</p>
+
+                        <h3>1. Application Layer</h3>
+                        <ul>
+                            <li>Where user interaction happens</li>
+                            <li>Uses protocols like HTTP and HTTPS</li>
+                            <li>Example: loading a webpage in your browser</li>
+                        </ul>
+
+                        <h3>2. Transport Layer</h3>
+                        <p>This layer controls how data is sent between devices.</p>
+
+                        <h4>TCP (Transmission Control Protocol)</h4>
+                        <ul>
+                            <li>Reliable and ordered data transfer</li>
+                            <li>Checks for errors</li>
+                            <li>Resends missing data</li>
+                        </ul>
+
+                        <h4>UDP (User Datagram Protocol)</h4>
+                        <ul>
+                            <li>Faster but less reliable</li>
+                            <li>No error checking</li>
+                            <li>Used in streaming and gaming</li>
+                        </ul>
+
+                        <h3>3. Internet Layer</h3>
+                        <ul>
+                            <li>Handles addressing and routing</li>
+                            <li>Uses IP (Internet Protocol)</li>
+                            <li>Decides where data should go</li>
+                        </ul>
+
+                        <h3>4. Network Access Layer</h3>
+                        <ul>
+                            <li>Handles physical connections</li>
+                            <li>Includes Wi-Fi and Ethernet</li>
+                            <li>Sends data as electrical signals or radio waves</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>How It All Works Together</h2>
+                    <div class="section-content">
+                        <ol>
+                            <li>Application layer creates the request</li>
+                            <li>Transport layer breaks it into packets (TCP)</li>
+                            <li>Internet layer adds IP addresses</li>
+                            <li>Network layer sends the data</li>
+                        </ol>
+
+                        <p>The process then happens in reverse when the response returns.</p>
+                    </div>
+                </section>
+
+                <section class="info-section">
+                    <h2>Why This Matters</h2>
+                    <div class="section-content">
+                        <ul>
+                            <li>Explains how websites load</li>
+                            <li>Helps understand networking and security</li>
+                            <li>Essential for web development and programming</li>
+                            <li>Shows how global communication works</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </main>
+</body>
+</html>
